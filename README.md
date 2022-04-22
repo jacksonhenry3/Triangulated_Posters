@@ -3,6 +3,10 @@
  
 Code and templates for generating stylized posters using delaunay meshes of low resolution images, producing posters ready for large printings.
 
+To generate new images you will need mathematica.
+
+The poster template is made using adobe indesign.
+
 This work is licensed under a
 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
 
