@@ -1,0 +1,2696 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    160035,       2688]
+NotebookOptionsPosition[    158646,       2655]
+NotebookOutlinePosition[    159174,       2674]
+CellTagsIndexPosition[    159131,       2671]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"This", " ", "controls", " ", "the", " ", "base", " ", "color"}], 
+   "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"s", " ", "=", " ", ".6"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"CollorCorrelatedWithBrightnessAvg", "[", "l_", "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", "L", "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"l", "\[Equal]", "0"}], ",", 
+         RowBox[{"L", "=", 
+          RowBox[{".99", "-", 
+           RowBox[{
+            RowBox[{"RandomReal", "[", "]"}], "/", "10"}]}]}], ",", 
+         RowBox[{"L", "=", "l"}]}], "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Hue", "[", "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"s", "+", 
+           RowBox[{"L", "*", 
+            RowBox[{
+             RowBox[{"Random", "[", "]"}], "/", "4"}]}]}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"(", 
+           RowBox[{"1", "-", "L"}], ")"}], ",", "\[IndentingNewLine]", "L"}], 
+         "}"}], "]"}]}]}], "]"}]}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Choose", " ", "one", " ", "of", " ", "the", " ", "above", " ", 
+     "colormaps"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"colorMap", " ", "=", " ", "CollorCorrelatedWithBrightnessAvg"}], 
+    ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.78234767047567*^9, 3.7823477275808353`*^9}, {
+   3.782347787021091*^9, 3.782347807500532*^9}, {3.7823482642675962`*^9, 
+   3.782348316869007*^9}, {3.7823484002420464`*^9, 3.782348407651042*^9}, {
+   3.782348480402074*^9, 3.782348530265093*^9}, {3.7823488930617685`*^9, 
+   3.7823489207484255`*^9}, {3.782349079981713*^9, 3.782349081565169*^9}, {
+   3.7823499733341913`*^9, 3.782349987788493*^9}, {3.782409587505378*^9, 
+   3.7824095945134664`*^9}, {3.782410106978187*^9, 3.7824101123932686`*^9}, {
+   3.7824102982334814`*^9, 3.782410369121488*^9}, {3.782410405842942*^9, 
+   3.782410421225136*^9}, 3.7824104707788296`*^9, {3.7824105570191555`*^9, 
+   3.7824105585699263`*^9}, {3.791409917879363*^9, 3.791409963950075*^9}, {
+   3.7914100266063166`*^9, 3.7914100292059107`*^9}, {3.7914102462958574`*^9, 
+   3.7914102871835794`*^9}, {3.79141051698374*^9, 3.7914105197583685`*^9}, {
+   3.79141347033074*^9, 3.7914135644823227`*^9}, {3.7914137862914643`*^9, 
+   3.7914138084820375`*^9}, {3.7914142427964277`*^9, 3.7914142428904495`*^9}, 
+   3.7914143855963526`*^9, 3.7914146204924693`*^9, 3.7914156599014807`*^9, 
+   3.7914160982622557`*^9, {3.7914168321730633`*^9, 3.791416833151285*^9}, {
+   3.7914168650234947`*^9, 3.7914169558540645`*^9}, {3.7914170248396873`*^9, 
+   3.7914170273032446`*^9}, {3.791848475163*^9, 3.7918485066085405`*^9}, 
+   3.791848906770507*^9, {3.7918490453617444`*^9, 3.7918490481143665`*^9}, {
+   3.79184952193925*^9, 3.7918495239216986`*^9}, {3.791849575980488*^9, 
+   3.7918495848024855`*^9}, {3.791850630403397*^9, 3.7918506306194468`*^9}, {
+   3.7918509437104797`*^9, 3.7918509503479834`*^9}, {3.7918517999265327`*^9, 
+   3.7918518034690905`*^9}, 3.791852480389818*^9, {3.791853180935635*^9, 
+   3.791853183581663*^9}, {3.7918537447036643`*^9, 3.7918537447586765`*^9}, {
+   3.804536534059457*^9, 3.8045365633275795`*^9}, {3.8045372576760807`*^9, 
+   3.8045372579401407`*^9}, {3.807454808788561*^9, 3.807454883026784*^9}, {
+   3.807455794609568*^9, 3.8074557947736053`*^9}, {3.8200792300434284`*^9, 
+   3.8200792318838453`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"211208da-b257-4ded-b407-b273481d1905"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"w", ",", "h"}], "}"}], "=", 
+    RowBox[{"{", 
+     RowBox[{"240", ",", "180"}], "}"}]}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"boudryCorners", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"w", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "h"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"w", ",", "h"}], "}"}]}], "}"}]}], ";"}]}]}]], "Input",
+ CellChangeTimes->{
+  3.7823479705655203`*^9, {3.7823489441483417`*^9, 3.7823489932695646`*^9}, {
+   3.782349151006343*^9, 3.782349151709502*^9}, {3.782349234399175*^9, 
+   3.7823492900049458`*^9}, {3.782349382342081*^9, 3.7823494041495743`*^9}, {
+   3.7823494906786413`*^9, 3.782349490740655*^9}, {3.7823495428943834`*^9, 
+   3.7823495860934534`*^9}, {3.782349720934018*^9, 3.7823497409820833`*^9}, {
+   3.7823497712134495`*^9, 3.7823497841336565`*^9}, {3.7823498688549213`*^9, 
+   3.782349895869609*^9}, {3.782409330033058*^9, 3.782409349129378*^9}, {
+   3.782409616762498*^9, 3.782409665945549*^9}, {3.7824097648580685`*^9, 
+   3.782409863731122*^9}, {3.782409902027738*^9, 3.782409903961166*^9}, {
+   3.782409945274531*^9, 3.782409993337456*^9}, {3.782410038842245*^9, 
+   3.7824100588747177`*^9}, {3.7824233500147767`*^9, 
+   3.7824234280882845`*^9}, {3.782423924615508*^9, 3.7824239329103804`*^9}, {
+   3.78242413504008*^9, 3.7824241381049867`*^9}, {3.782424236873294*^9, 
+   3.7824242380225534`*^9}, {3.7824243761281815`*^9, 3.7824243775913453`*^9}, 
+   3.7824244528473744`*^9, {3.7824246876244373`*^9, 3.782424744286854*^9}, {
+   3.7824251090233536`*^9, 3.7824251132551517`*^9}, 3.7824254481365166`*^9, {
+   3.7824255820878477`*^9, 3.7824256148554316`*^9}, {3.7824256485366535`*^9, 
+   3.7824257345676537`*^9}, {3.791409982983251*^9, 3.791409996287264*^9}, {
+   3.7914101370978007`*^9, 3.791410146333892*^9}, 3.7914134799949284`*^9, {
+   3.791416839430707*^9, 3.791416844676887*^9}, {3.7914169769018393`*^9, 
+   3.7914169860299063`*^9}, {3.7914170924319935`*^9, 
+   3.7914170925110116`*^9}, {3.791850648160418*^9, 3.791850750243926*^9}, {
+   3.79185082430015*^9, 3.791850824483192*^9}, {3.791851650172364*^9, 
+   3.791851659291933*^9}, {3.7918529126622405`*^9, 3.7918529191599827`*^9}, {
+   3.7918530009515057`*^9, 3.791853006229701*^9}, {3.80453581557135*^9, 
+   3.8045358573054647`*^9}, {3.804537290109967*^9, 3.80453729099577*^9}, {
+   3.8045376849240513`*^9, 3.804537687672789*^9}, 3.804537856774705*^9, {
+   3.820079251555062*^9, 3.820079291744648*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"6e004281-64dc-45aa-9499-88d0d7d757c5"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"240", ",", "180"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.7918529202672343`*^9, 3.791853007799056*^9, 3.7918535386048975`*^9, 
+   3.8045356405036793`*^9, 3.8045357707979045`*^9, {3.8045358203656745`*^9, 
+   3.804535859167573*^9}, 3.8045362017086563`*^9, 3.8045363540038476`*^9, 
+   3.8045366316944003`*^9, 3.8045367744358387`*^9, 3.8045370389077177`*^9, 
+   3.8045375117817316`*^9, 3.80453769385106*^9, 3.8045394818140063`*^9, 
+   3.8045398284031305`*^9, 3.80453996482705*^9, 3.80745430490482*^9, 
+   3.8074545537790203`*^9, 3.8074549977790675`*^9, 3.8074557582193766`*^9, 
+   3.8074558092338595`*^9, 3.807456196290247*^9, 3.8074566091293716`*^9, {
+   3.820079292976926*^9, 3.820079295341462*^9}, 3.8595791077540035`*^9},
+ CellLabel->"Out[4]=",ExpressionUUID->"2a234dc9-ffef-42da-b2aa-477ad3e5ba6d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"verts", " ", "=", " ", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"verts", " ", "=", " ", 
+   RowBox[{"verts", "\[Union]", "boudryCorners"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"verts", " ", "=", " ", 
+   RowBox[{"verts", "\[Union]", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"RandomReal", "[", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "w"}], "}"}], "]"}], ",", 
+        RowBox[{"RandomReal", "[", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "h"}], "}"}], "]"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"idx", ",", "0", ",", "100"}], "}"}]}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"verts", " ", "=", " ", 
+   RowBox[{"verts", "\[Union]", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"idx", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"idx", ",", "0", ",", "w", ",", "5"}], "}"}]}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"verts", " ", "=", " ", 
+   RowBox[{"verts", "\[Union]", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"idx", ",", "h"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"idx", ",", "0", ",", "w", ",", "5"}], "}"}]}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"verts", " ", "=", " ", 
+   RowBox[{"verts", "\[Union]", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "idx"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"idx", ",", "0", ",", "h", ",", "5"}], "}"}]}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"verts", " ", "=", " ", 
+   RowBox[{"verts", "\[Union]", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"w", ",", "idx"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"idx", ",", "0", ",", "h", ",", "5"}], "}"}]}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"div", " ", "=", " ", "4"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"verts", " ", "=", " ", 
+   RowBox[{"verts", "\[Union]", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"idx", ",", 
+        RowBox[{"RandomReal", "[", 
+         RowBox[{"h", "/", "div"}], "]"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"idx", ",", "0", ",", "w", ",", "5"}], "}"}]}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"verts", " ", "=", " ", 
+   RowBox[{"verts", "\[Union]", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"idx", ",", 
+        RowBox[{"h", "-", 
+         RowBox[{"RandomReal", "[", 
+          RowBox[{"h", "/", "div"}], "]"}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"idx", ",", "0", ",", "w", ",", "5"}], "}"}]}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"verts", " ", "=", " ", 
+   RowBox[{"verts", "\[Union]", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"RandomReal", "[", 
+         RowBox[{"w", "/", "div"}], "]"}], ",", "idx"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"idx", ",", "0", ",", "h", ",", "5"}], "}"}]}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"verts", " ", "=", " ", 
+   RowBox[{"verts", "\[Union]", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"w", "-", 
+         RowBox[{"RandomReal", "[", 
+          RowBox[{"w", "/", "div"}], "]"}]}], ",", "idx"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"idx", ",", "0", ",", "h", ",", "5"}], "}"}]}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", "verts", "]"}]}], "Input",
+ CellChangeTimes->{{3.8045371643982024`*^9, 3.804537170838492*^9}, {
+  3.80453786037947*^9, 3.8045378614247055`*^9}, {3.820079304907132*^9, 
+  3.8200793052042*^9}, {3.820079344772336*^9, 3.820079345081406*^9}, {
+  3.820079527721329*^9, 3.8200795666192694`*^9}, {3.8200797710793*^9, 
+  3.820079816129874*^9}, {3.8200798792564635`*^9, 3.8200798944430714`*^9}, {
+  3.820079955513256*^9, 3.8200799787129116`*^9}, {3.8200818173349514`*^9, 
+  3.8200820002980824`*^9}, {3.820082091340472*^9, 3.8200821022253947`*^9}, {
+  3.8200821397160683`*^9, 3.8200821397810826`*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"84a93d64-ec2c-404f-83e0-cb0c7bfd3afe"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, 
+   {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.007333333333333334], 
+    AbsoluteThickness[1.6], PointBox[CompressedData["
+1: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
+yKfrtRhTdS6Zj5DOxRhTdRuZD8Zo/P4X8NOigw==
+     "]]}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{
+   "OptimizePlotMarkers" -> True, "OptimizePlotMarkers" -> True, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0, 240.}, {0, 180.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{{3.8200818377910767`*^9, 3.820081876487965*^9}, {
+   3.8200819492322016`*^9, 3.820082012997883*^9}, {3.8200820916645455`*^9, 
+   3.8200821024464445`*^9}, 3.8200821399921308`*^9, 3.8595791090972633`*^9},
+ CellLabel->"Out[18]=",ExpressionUUID->"42313206-5ade-44b5-af9c-da0c64661e89"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"imageMesh", "=", 
+  RowBox[{"DelaunayMesh", "[", "verts", "]"}]}]], "Input",
+ CellLabel->"In[19]:=",ExpressionUUID->"3fc142fd-c6bd-41cd-8595-dfddd5205b33"],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[
+   DynamicModuleBox[{Typeset`mesh = {MeshRegion, {}}}, 
+    TagBox[GraphicsComplexBox[CompressedData["
+1:eJx9mHtcTdn7x4uQlJJT3yTdo3RRpPvlOTlFSup0uud0Opfu6VBMKnVyGaIx
+SggZKdOUS0K5Mymji1AmkWloXCpRonAQvquXvfd893r9Xr/9z3m99+eznvXs
+vdflWUePn8QWjZORkbkgKyMz9vv/XwygsyHGFhhbY2yPsQudJUyK+5NuZVmV
+u2F+Fub3wHRPTPfCdB86gy/m96NzLRtrz8HaB2DtA7H2QVj7EKx9KNY+DGsf
+jrXnYu0jMObRuRtjSSSddflYfxjzBFj/Qopnnj37H3emkK4XYwwiLB+MJVEg
+kzBO7kXYgGuV3tXJ8qm+ILl7Mqdj85ArmZ8kINjrgvnH74zGR7Fa7VDZos8E
++4Hk4PvqI57jQfqr3qaNfW4gFsqbb9moSvWje/Wjtl4xyeR4xccxAxLentJO
+TzSidKHyqjc56pF0P8pXnJbmNL1NHcjna3UOGFSynUFwBIiP7fDI4JIcCt2C
+xj3qsbOgqNSL0+LnC93nty6JcdADxhruYWbVUlCxZk3ZnKJP+HmQeuLRRME7
+A6Jfcjzj88wQ5P8YkZ3r60rpGd8SfxEPR9L9KF/eoXlXFHbPJu5bgF2s1GPj
+G5LtQaLD/Se1yxgkBnWqrVEc6Dabv6B+vwmhs0CsPLXHbboZ5N7yHtzXKITu
+heO0lBPNoFZNc4qjEYeKS8/PAhpdndcvCpxF6T1i3T0VFny6H+XXekcnzX+O
+BXgkpea3RvHg+mtWbgvDkvC5wM43dfq/llhC+Z3MD+J6Z+geVF0zQ8vqu47m
+V1+C794tbgSj+SnpG9JWOW0FLf0utdP8BMD6XflQoOICQrfGfsnLGhrf9s9c
+22BK6UP3S3M0giLp/rHvH6de2ztjIdF/OFzuhJP3mwlG86vWpOsNd4ItoaP1
+Y5vV3/pRtsDY054vVg0GFZ2NtqWGdsD5zG17mxQIlluDl83KtYNR2RKJuuUi
+6rvQ87OHdsOdtZP8FlC6wqU1bO4UAd2P8ivWaVc1X2APGtYNl45l2YGvsfts
+Ob49NM8Tr64XRYLiIvv0944OhD8Qnm1fF75pmSORLx8Yq27umOxDMFpfLVcH
+Xr5a5gi+DgKet7MTGk+RceYcJ2h8vD0xs4kNvtsVTCVXnWDktwnH1FTJ9Rhb
+1xFX8Rd/TXZTovRAn5fvnHX4dD/KP7+t4XCHAxD3fSA/doSZVUQwWj+K96ef
+SNJiwoNzW4p8b9uDyrBPm7E74uxkjriXWH//Zx8huXHw+cX2A46U3tMa7Rbi
+K6T7Uf+gKTOvo5lgtH6mTSs59HEd8V2o9R7bhxCPnFthGTp5LqWnn1RjpP7M
+p/tR/PLD1WfVOsj2DODt9bvT/JAFKi+11muY6cN5jYECg6nu33W0/i7hX1PT
+0CUYrb+Ne2R1tmS5g+STfH1YtAw052W+f6JAvHdy/cX3RcTln57+FVny73d9
+dsC/iLGLT/ej/OKyz247ErOYeF60P16ceyOTuQTEFcGTMkq5YB2Xe7LGewnl
+f9XVabp6iGBqf8P2YcSwIVjZxGgGpTdUZR59M1VA96N4xzueWD9PXkqwF+xg
+L7XQ9SX2cXJ/xPd1xEsyJx5UNnCl9G6t8u6HSSK6H8WXxucHju/zgkeF5423
+nhdC4ZfsR7utvIl4XGgc3fBxwNEbzuf0P5ibuoy4j9UNiDPaVwVfEdtS+qG8
+6lzxbj7dP7b+TnyomFywHPZo7vL7kBT173v93wvxk8FDr+yHmJT+6PHf0Snb
+hXT/2PzedquyL8cXWjpfeMt4+MB5qfrda1w/sPN/0GrHYoHGzuS48Wv9oIzR
+wGAvJNYvvK5BPNLvMK6zDChdjl/4i4WSgO4fW58DJ/4RNegH1U2JM31W+n+/
+j9dFiDe8ndO5vtyd0ot3KTkFBEfR/Sie8G3NjrvP2TC0Z/yhz6L58OrmzE/x
+Wv4ApgPS9NGlUJ42sDLP1x/4iRa5U/N9QT7fixvY4g8FbkemfnhIji+sDkP8
+IN6rxdvfgdI/Vnz5YfVkEd2P+s89lSVzcSkHhnxGf9SuCAIWh/nuSRcHCvn3
+xr3PJOoxvK5DXHk6Z9md3e6U7p3BrsiaGkn3o/iMV8mT8/kBwDPVhOqD9jBU
+eWmGz7pAKL7dJn0lIeoxvE5EXDSy/PqAJovSAy/UbNAs49P9KH74zcr/mNgG
+wd3wr+UxaSJQSRq5mugcBJapO2s++M2Bqu2v93GWBoEvv5q1bZgYT3gdiji3
+6VSFTYwlpY/49dWskgrpftRf7TSNlBVNwfDg1v483VYvkGPbrGrrDoZN/ayE
+KCMyLlbXIv5UvzSvJNed0r2vFX668UJE96P4D9inUmZNCIWUE45PVZ8S8x6v
+ixE31t3L+fazMaXXzbinoPpCQPePrR/zzU1sN4fC1ovdgwsrUf1V3WN0bGYY
+GGp4jrs+vILwYXU24gfbrWqep2lS+p8BNVL31yK6f2w+915TWPMsDMQDs75V
+1lnBUMB9lo00DAp29+yd8pF4LrxuR9xz+Y99yytYlN4av+qpvkcU3Y/ity8q
+kzW4tAIKggq8lx8g62ms7h9bp25O+tlauJDSi+xDmJNL+HQ/irdJa5rlr0lc
+KK5nfV1xhQ0J8W2BMhlcaFUPzIowA7h+u2J/wwbU/uG6epPxkVDMeaaUZRAB
+x1OiL75oIN8vfs6IAGAMRey5KEPpXczTU5O9RHQ/6r/bak/A4ecRMJp+Pmbl
+Fw58OtIVkC7Lg7LiZIUman3DzimInS4MGBkzWJRusaxI1lZBRPej+EOHan6X
+zeBBe+TifsefguBs+cUv6wp4IDX6Kl/IIcYffg5CvJYZbXa3wYrSOYWdvfLH
+BHT/2HxOWCyrOyESuDdehzheIe9j5yjEfZsV1YZv2VE6s+7r+kW/Cel+FM9S
+70/n3UciobWl0XFyhD+4XXZuzauIhPdshsqpVAGEHs2qmTSRD94qes/Za8NB
+S3ujpfp0PugaNLSdVCH2b/zchnhpuI2DwW+WlB6+bHFnCkNE96P+tX80L02q
+5oOK1HiK4hNinODnPsThu0ILYsa7UnrXlX3hO8n9ofbfeHJ7X/+o/4APZr26
+cuV6IVBtkXeSry+AnZ5fXn3eRTw/fo5ELPEb2fGuyprS62b75feeEND9Y/PB
+J9g4OVsAqYptw/98E0HRT7knXTYKgHfNqKynB70X++VRsw8KwDB4+5wa8yjw
+2LIspaNMAC3N8ac1joaA1MpkyqEaAVge8zTdeVYPjidpmf7VLIC+zI+nlZgL
+4e5WUfbxpygfyVaZdkNNsL4yaHdpQADFJcq7dl8m9xnsXItYa86CrHrmQkpP
+VZassvES0P0SYn7j52LExjrKRTNe2lB6ysTqmk3HI+n+sfkj+dDqisZR+/sD
+f9UXhwKj4Eq2epMQRsLzh2UbyPmAnasRM6YeHK7XM6P01DOPzwmb+HQ/mR9+
+Lkfcun+6uRVDidKN9jeGNYmFdD9qv9LrFL+qXwQ2hgPDB3ZHQmF2ipr8KxEo
+lv6SYvWIB1fryj3qlkTB2Wzzxw5b0Xs7MOMHrzVRoD5vOOvZlCh6HuSF+Hwt
+04WlD5Seee+MuN8Ae6/o12MOf8qGEsQT/2GU5syCy2qyc/OVogmdqPt0o+nx
+EWvFVW1In+9C6X92JzWHRwrpfhRfPuuvlYMmiJmf/bVHB1ybJxmoWtoTOqrL
+LAuN4yuXR8Ozgl0y9h2+UHBC7phLMNneA9aLJvcE7SIYfVdp7kfvo6XRUOxw
+5IX1dg2wi/h0wuRcNDTui6zh6JD7AZYv4pV9vVvnty2i9BsPu1I7lYV0P8r3
+SMbha4/UYoj74eBj7LzpolcMGKfE+woziH2MF0OPj1hO56rS5cULKD2q1abY
+xEFI96P4lU5dXLecGGCAIk8tdjH43j2648M+Mp4LDAWa+Zv9GQPzj7etGAhm
+QwzbVn3OaAy0cObtKr5A7oux9P4Rb5MPr21nMSl9qdthm8wPPLof9T9+6pz8
+PG2yPRfYX2eb+uuTehjcP+zakcUkGNUxYNXhqR1AMBq3vFDD7NAwknkwJDeh
+RiGWjBcC6opnnEoSYmGUq5jm4R0FdhylDKccQkfzRjtZnDcnPxa0Yk2l76KW
+f79fjD0PYnaz9HNAJYvScxvyzsoWCul+9Dxtyj2hoioyfiiUCWdasZtigTXN
+JDtmrhcEqmS/1HhE6GgdVzFwa/1hXBxYg2rvtMXLYG1gobpUMY7eP/wfPGn1
+OSW7UVeSz/5tUL3Glg80P8pnrZeOtb8PyUy4/U3VOC2ejGcNuuukl39KIZkF
+0eJt2pIfCCb35W6sf8QKZyxirJyA0rtD/AaejmJ+1H+J57GcCU/j4Po29+ln
+vDxhR6+ktP41GY8Bn4wX6MW8I9kQpl+f9ljDNJ7oPwCWxKy+ExNEMKr7qwbs
+bU/yCKbqaFInLsQbvmRY/qjvRukr/Rc++bBVQPej/N5NXV24PJ/kSNBlz+1v
+qiTjecKQVdOWv6tJ9oHXdfdmujWSbAGa6QlC7oN4OO8e+dO09Stgx4S8zVz1
+BOi+YnWoxZ7oXzeBnh/iovGL4yvRCyT5kzQwuvuGiO5H+a1fdDtpldG/nCM8
+3KhtTjCqy2peTtH8RUww2mfd+Om3j5eSfj+4sZufe/Q3sn8h2jcLc1+QTJ7j
+arH8EKu8Sfvn9uEFlO4QZxPw7KaA7kf5vD3urzrhTgJ0pWQ+XzPTAwqfzvi2
+91kC9H3snDVZNQSMM9lSwwmJYHYm90J1BbEf8hLp/SHmHLPttJdjUXrHuvTe
+0SrMj/o7I4rhJCQRjOoW64gXt6zzEkHa4vP7BWNn0Cx8pjJ4LhHk76d/XYDq
+V5Uz+lt6byaCxnb/Rc4XQ2Ba6R/1fQNk/+T/civp+VDMwHRDjC0wtsYYj+9C
+8ZHEveJH2S50nfqfi/SzMN0D0z0x3QvTfehM/U9B+v3oTP0PQLbn0Jk6R5Pt
+A+lMnUvJ9iF0ps6BZPswOlPnLLI9l87UuYVkHp27MabqeoKpOnslMKPm999e
+yKfrtRhTdS6Zj5DOxRhTdRuZD8Zo/P4X8NOigw==
+      "], 
+      {Hue[0.6, 0.3, 0.95], EdgeForm[Hue[0.6, 0.3, 0.75]], 
+       TagBox[PolygonBox[CompressedData["
+1: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
+         "]],
+        Annotation[#, "Geometry"]& ]}],
+     MouseAppearanceTag["LinkHand"]],
+    AllowKernelInitialization->False],
+   "MeshGraphics",
+   AutoDelete->True,
+   Editable->False,
+   Selectable->False],
+  DefaultBaseStyle->{
+   "MeshGraphics", FrontEnd`GraphicsHighlightColor -> 
+    Hue[0.1, 1, 0.7]}]], "Output",
+ CellChangeTimes->{
+  3.820082033420063*^9, {3.8200820938113546`*^9, 3.820082104002797*^9}, 
+   3.8200821420445952`*^9, 3.8595791108248687`*^9},
+ CellLabel->"Out[19]=",ExpressionUUID->"28adea5d-9f62-4f3d-9959-cc4bc7069eea"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"res", " ", "=", " ", 
+  RowBox[{"Graphics", "[", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"colorMap", "[", "0", "]"}], ",", "p"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"p", ",", 
+       RowBox[{"MeshPrimitives", "[", 
+        RowBox[{"imageMesh", ",", "2"}], "]"}]}], "}"}]}], "]"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{
+  3.8200820722231426`*^9, 3.8595790360626554`*^9, {3.8595790677819204`*^9, 
+   3.859579068157107*^9}},
+ CellLabel->"In[20]:=",ExpressionUUID->"6c76ee5a-5c9d-436a-af30-22a14acf9803"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {Hue[0.6465402260451265, 0.08943663607516283, 0.9105633639248372], 
+    PolygonBox[{{127.5879720656153, 83.95986383453413}, {121.74445726080927`, 
+     74.95886189189196}, {141.14321795688875`, 77.48493857011204}}]}, 
+   {Hue[0.6053884345962514, 0.08627020261446727, 0.9137297973855327], 
+    PolygonBox[{{111.87831231144787`, 103.89133260267255`}, {
+     127.5879720656153, 83.95986383453413}, {131.8752134845122, 
+     94.20678193064606}}]}, 
+   {Hue[0.7213429255229898, 0.03571795530045352, 0.9642820446995465], 
+    PolygonBox[{{127.5879720656153, 83.95986383453413}, {141.14321795688875`, 
+     77.48493857011204}, {131.8752134845122, 94.20678193064606}}]}, 
+   {Hue[0.6008581338854759, 0.06750608705175232, 0.9324939129482477], 
+    PolygonBox[{{150.75421473307517`, 100.52587989056764`}, {
+     141.14321795688875`, 77.48493857011204}, {159.42910429600454`, 
+     82.94662930037384}}]}, 
+   {Hue[0.7932998515203955, 0.0558891419566262, 0.9441108580433738], 
+    PolygonBox[{{131.8752134845122, 94.20678193064606}, {141.14321795688875`, 
+     77.48493857011204}, {150.75421473307517`, 100.52587989056764`}}]}, 
+   {Hue[0.6268595557432994, 0.023041644850380072`, 0.9769583551496199], 
+    PolygonBox[{{150., 31.013314506638707`}, {141.14321795688875`, 
+     77.48493857011204}, {132.63989149529306`, 42.66088974389635}}]}, 
+   {Hue[0.7287165186100921, 0.04545036727838214, 0.9545496327216179], 
+    PolygonBox[{{141.14321795688875`, 77.48493857011204}, {
+     121.74445726080927`, 74.95886189189196}, {132.63989149529306`, 
+     42.66088974389635}}]}, 
+   {Hue[0.8204703536750171, 0.04388880303412712, 0.9561111969658729], 
+    PolygonBox[{{115., 41.322741719772054`}, {121.74445726080927`, 
+     74.95886189189196}, {104.0799228412319, 53.7740139047045}}]}, 
+   {Hue[0.8110207036919465, 0.05778162915085461, 0.9422183708491454], 
+    PolygonBox[{{99.51278333954548, 92.58437639932714}, {127.5879720656153, 
+     83.95986383453413}, {111.87831231144787`, 103.89133260267255`}}]}, 
+   {Hue[0.6074858789573079, 0.02906412075523912, 0.9709358792447609], 
+    PolygonBox[{{132.63989149529306`, 42.66088974389635}, {
+     121.74445726080927`, 74.95886189189196}, {115., 41.322741719772054`}}]}, 
+   {Hue[0.7073974118115856, 0.08857175019807961, 0.9114282498019204], 
+    PolygonBox[{{99.51278333954548, 92.58437639932714}, {121.74445726080927`, 
+     74.95886189189196}, {127.5879720656153, 83.95986383453413}}]}, 
+   {Hue[0.7012129429431145, 0.09482844419520631, 0.9051715558047937], 
+    PolygonBox[{{131.8752134845122, 94.20678193064606}, {150.75421473307517`, 
+     100.52587989056764`}, {144.18844103750854`, 113.84880951146005`}}]}, 
+   {Hue[0.7911030346396266, 0.0389794009558424, 0.9610205990441576], 
+    PolygonBox[{{99.14632894850274, 55.62599391993325}, {121.74445726080927`, 
+     74.95886189189196}, {99.51278333954548, 92.58437639932714}}]}, 
+   {Hue[0.6554943497723827, 0.0639559029593596, 0.9360440970406404], 
+    PolygonBox[{{130., 40.15747522456738}, {132.63989149529306`, 
+     42.66088974389635}, {115., 41.322741719772054`}}]}, 
+   {Hue[0.7036056187400612, 0.025261602793792526`, 0.9747383972062075], 
+    PolygonBox[{{144.18844103750854`, 113.84880951146005`}, {
+     150.75421473307517`, 100.52587989056764`}, {157.21367850439327`, 
+     102.65775738264637`}}]}, 
+   {Hue[0.6929585871267767, 0.0474153096596428, 0.9525846903403572], 
+    PolygonBox[{{150.75421473307517`, 100.52587989056764`}, {
+     159.42910429600454`, 82.94662930037384}, {157.21367850439327`, 
+     102.65775738264637`}}]}, 
+   {Hue[0.8334044538151261, 0.056378910123525694`, 0.9436210898764743], 
+    PolygonBox[{{100., 43.09871116781865}, {104.0799228412319, 
+     53.7740139047045}, {99.14632894850274, 55.62599391993325}}]}, 
+   {Hue[0.6464282022676983, 0.018176075458393948`, 0.981823924541606], 
+    PolygonBox[{{104.0799228412319, 53.7740139047045}, {121.74445726080927`, 
+     74.95886189189196}, {99.14632894850274, 55.62599391993325}}]}, 
+   {Hue[0.6149339952006795, 0.08797942975059514, 0.9120205702494049], 
+    PolygonBox[{{99.51278333954548, 92.58437639932714}, {111.87831231144787`, 
+     103.89133260267255`}, {106.08149175084935`, 106.72204181619793`}}]}, 
+   {Hue[0.7030179065582945, 0.03171319951342777, 0.9682868004865722], 
+    PolygonBox[{{111.87831231144787`, 103.89133260267255`}, {
+     131.8752134845122, 94.20678193064606}, {144.18844103750854`, 
+     113.84880951146005`}}]}, 
+   {Hue[0.7142567106694752, 0.09482360786261868, 0.9051763921373813], 
+    PolygonBox[{{108.43232104806839`, 119.80883843553653`}, {
+     111.87831231144787`, 103.89133260267255`}, {144.18844103750854`, 
+     113.84880951146005`}}]}, 
+   {Hue[0.626976613203436, 0.07158742051929246, 0.9284125794807075], 
+    PolygonBox[{{140., 24.804490390355483`}, {130., 40.15747522456738}, {
+     121.93752069903502`, 32.346664349590014`}}]}, 
+   {Hue[0.8163619228760592, 0.09761383042636129, 0.9023861695736387], 
+    PolygonBox[{{130., 40.15747522456738}, {115., 41.322741719772054`}, {
+     121.93752069903502`, 32.346664349590014`}}]}, 
+   {Hue[0.7055571796241742, 0.04166793476681585, 0.9583320652331841], 
+    PolygonBox[{{115., 41.322741719772054`}, {104.0799228412319, 
+     53.7740139047045}, {100., 43.09871116781865}}]}, 
+   {Hue[0.6721194092364097, 0.03987294287224952, 0.9601270571277505], 
+    PolygonBox[{{93.16141365426188, 35.9026571160108}, {111.56964367805404`, 
+     17.76048273544933}, {100., 43.09871116781865}}]}, 
+   {Hue[0.6213545375191984, 0.0779370330404453, 0.9220629669595547], 
+    PolygonBox[{{149.63862761393915`, 123.53198508263472`}, {
+     157.21367850439327`, 102.65775738264637`}, {165.22654007282745`, 
+     106.51195421439053`}}]}, 
+   {Hue[0.7047018990331857, 0.08098877011231131, 0.9190112298876887], 
+    PolygonBox[{{157.21367850439327`, 102.65775738264637`}, {
+     159.42910429600454`, 82.94662930037384}, {165.22654007282745`, 
+     106.51195421439053`}}]}, 
+   {Hue[0.6995998143710158, 0.08813516674742583, 0.9118648332525742], 
+    PolygonBox[{{184.42409229480643`, 55.}, {159.42910429600454`, 
+     82.94662930037384}, {150., 31.013314506638707`}}]}, 
+   {Hue[0.7181189873426893, 0.01871459700031275, 0.9812854029996873], 
+    PolygonBox[{{159.42910429600454`, 82.94662930037384}, {
+     141.14321795688875`, 77.48493857011204}, {150., 31.013314506638707`}}]}, 
+   {Hue[0.8371059249948534, 0.03484625287157794, 0.9651537471284221], 
+    PolygonBox[{{132.63989149529306`, 42.66088974389635}, {130., 
+     40.15747522456738}, {140., 24.804490390355483`}}]}, 
+   {Hue[0.8156276675223993, 0.05873796659706798, 0.941262033402932], 
+    PolygonBox[{{150., 31.013314506638707`}, {132.63989149529306`, 
+     42.66088974389635}, {144.59645867928418`, 27.06518279182194}}]}, 
+   {Hue[0.7211982569573071, 0.05781866404455216, 0.9421813359554478], 
+    PolygonBox[{{83.4513524187069, 105.98376532400505`}, {106.08149175084935`,
+      106.72204181619793`}, {108.43232104806839`, 119.80883843553653`}}]}, 
+   {Hue[0.7392990075558964, 0.04856986148242859, 0.9514301385175714], 
+    PolygonBox[{{106.08149175084935`, 106.72204181619793`}, {
+     111.87831231144787`, 103.89133260267255`}, {108.43232104806839`, 
+     119.80883843553653`}}]}, 
+   {Hue[0.8231564404182715, 0.062196567392342694`, 0.9378034326076573], 
+    PolygonBox[{{144.59645867928418`, 27.06518279182194}, {
+     132.63989149529306`, 42.66088974389635}, {140., 24.804490390355483`}}]}, 
+   {Hue[0.707184531371627, 0.036538152985231886`, 0.9634618470147681], 
+    PolygonBox[{{136.16015685987134`, 133.91349503356008`}, {
+     144.18844103750854`, 113.84880951146005`}, {149.63862761393915`, 
+     123.53198508263472`}}]}, 
+   {Hue[0.6166312046738547, 0.01119493592921994, 0.9888050640707801], 
+    PolygonBox[{{144.18844103750854`, 113.84880951146005`}, {
+     157.21367850439327`, 102.65775738264637`}, {149.63862761393915`, 
+     123.53198508263472`}}]}, 
+   {Hue[0.7922307137307845, 0.02695520509328897, 0.973044794906711], 
+    PolygonBox[{{71.72502256030134, 77.72351728173709}, {99.51278333954548, 
+     92.58437639932714}, {81.16760265798638, 94.64248823775756}}]}, 
+   {Hue[0.7667430076268537, 0.06675680023175457, 0.9332431997682454], 
+    PolygonBox[{{99.51278333954548, 92.58437639932714}, {106.08149175084935`, 
+     106.72204181619793`}, {83.4513524187069, 105.98376532400505`}}]}, 
+   {Hue[0.6046570603787655, 0.060827767455389425`, 0.9391722325446106], 
+    PolygonBox[{{77.25887654486962, 66.28213791402735}, {99.14632894850274, 
+     55.62599391993325}, {99.51278333954548, 92.58437639932714}}]}, 
+   {Hue[0.7649720181622207, 0.025183135866788775`, 0.9748168641332112], 
+    PolygonBox[{{93.16141365426188, 35.9026571160108}, {100., 
+     43.09871116781865}, {90., 40.21038106826856}}]}, 
+   {Hue[0.7925403296768032, 0.03828943702692478, 0.9617105629730752], 
+    PolygonBox[{{100., 43.09871116781865}, {99.14632894850274, 
+     55.62599391993325}, {90., 40.21038106826856}}]}, 
+   {Hue[0.7206388325312122, 0.08177584664287274, 0.9182241533571273], 
+    PolygonBox[{{100., 43.09871116781865}, {111.56964367805404`, 
+     17.76048273544933}, {115., 41.322741719772054`}}]}, 
+   {Hue[0.8320184751222024, 0.027518961824660515`, 0.9724810381753395], 
+    PolygonBox[{{111.56964367805404`, 17.76048273544933}, {
+     121.93752069903502`, 32.346664349590014`}, {115., 
+     41.322741719772054`}}]}, 
+   {Hue[0.6613900753850421, 0.023103156688169424`, 0.9768968433118306], 
+    PolygonBox[{{135., 17.780550742348588`}, {121.93752069903502`, 
+     32.346664349590014`}, {120., 21.391426982310605`}}]}, 
+   {Hue[0.6689640197907762, 0.06780439080660527, 0.9321956091933947], 
+    PolygonBox[{{76.4440903922511, 53.97253333645358}, {99.14632894850274, 
+     55.62599391993325}, {77.25887654486962, 66.28213791402735}}]}, 
+   {Hue[0.6944205956075222, 0.0772576022282695, 0.9227423977717305], 
+    PolygonBox[{{186.49004133156404`, 67.34722914135233}, {
+     159.42910429600454`, 82.94662930037384}, {185.7871180233181, 65.}}]}, 
+   {Hue[0.8438914164626029, 0.019798439159839587`, 0.9802015608401604], 
+    PolygonBox[{{202.04685509136354`, 95.}, {159.42910429600454`, 
+     82.94662930037384}, {186.49004133156404`, 67.34722914135233}}]}, 
+   {Hue[0.800663048124161, 0.010025429944908182`, 0.9899745700550918], 
+    PolygonBox[{{80., 26.325390594876666`}, {90., 40.21038106826856}, {85., 
+     43.17038888190778}}]}, 
+   {Hue[0.832471517223924, 0.0658758442072026, 0.9341241557927974], 
+    PolygonBox[{{90., 40.21038106826856}, {99.14632894850274, 
+     55.62599391993325}, {85., 43.17038888190778}}]}, 
+   {Hue[0.6719550569212653, 0.09109256175109937, 0.9089074382489006], 
+    PolygonBox[{{186.75764990724258`, 45.}, {196.2893518735413, 
+     46.820964818936915`}, {184.42409229480643`, 55.}}]}, 
+   {Hue[0.7307293436194267, 0.03083589953679755, 0.9691641004632024], 
+    PolygonBox[{{185.7871180233181, 65.}, {159.42910429600454`, 
+     82.94662930037384}, {184.42409229480643`, 55.}}]}, 
+   {Hue[0.6865036807513631, 0.07451656587942435, 0.9254834341205757], 
+    PolygonBox[{{145., 16.652881277343376`}, {144.59645867928418`, 
+     27.06518279182194}, {140., 24.804490390355483`}}]}, 
+   {Hue[0.7215105175399615, 0.054349176423244216`, 0.9456508235767558], 
+    PolygonBox[{{145., 16.652881277343376`}, {140., 24.804490390355483`}, {
+     135., 17.780550742348588`}}]}, 
+   {Hue[0.6812144930978697, 0.027372021743228836`, 0.9726279782567712], 
+    PolygonBox[{{140., 24.804490390355483`}, {121.93752069903502`, 
+     32.346664349590014`}, {135., 17.780550742348588`}}]}, 
+   {Hue[0.7445874584542296, 0.07199844129831401, 0.928001558701686], 
+    PolygonBox[{{155., 20.69124692406467}, {150., 31.013314506638707`}, {
+     144.59645867928418`, 27.06518279182194}}]}, 
+   {Hue[0.8021027051359582, 0.059255980981838374`, 0.9407440190181616], 
+    PolygonBox[{{81.16760265798638, 94.64248823775756}, {99.51278333954548, 
+     92.58437639932714}, {83.4513524187069, 105.98376532400505`}}]}, 
+   {Hue[0.8283418183805407, 0.01612398779697788, 0.9838760122030221], 
+    PolygonBox[{{85., 43.17038888190778}, {99.14632894850274, 
+     55.62599391993325}, {76.4440903922511, 53.97253333645358}}]}, 
+   {Hue[0.6935173184277491, 0.02120730512037783, 0.9787926948796222], 
+    PolygonBox[{{158.3392539554019, 21.254115281974833`}, {150., 
+     31.013314506638707`}, {155., 20.69124692406467}}]}, 
+   {Hue[0.6423426716956503, 0.04967117208398397, 0.950328827916016], 
+    PolygonBox[{{108.43232104806839`, 119.80883843553653`}, {
+     144.18844103750854`, 113.84880951146005`}, {136.16015685987134`, 
+     133.91349503356008`}}]}, 
+   {Hue[0.7786253597120123, 0.09791248505851691, 0.9020875149414831], 
+    PolygonBox[{{54.62598208073642, 110.}, {49.878484231356055`, 100.}, {
+     79.19277150516439, 103.42132917443297`}}]}, 
+   {Hue[0.6325050825852938, 0.05858948692580079, 0.9414105130741992], 
+    PolygonBox[{{81.16760265798638, 94.64248823775756}, {83.4513524187069, 
+     105.98376532400505`}, {79.19277150516439, 103.42132917443297`}}]}, 
+   {Hue[0.7582604669480484, 0.051611658471546806`, 0.9483883415284532], 
+    PolygonBox[{{71.72502256030134, 77.72351728173709}, {77.25887654486962, 
+     66.28213791402735}, {99.51278333954548, 92.58437639932714}}]}, 
+   {Hue[0.6378907036084602, 0.04309457472112799, 0.956905425278872], 
+    PolygonBox[{{155., 20.69124692406467}, {144.59645867928418`, 
+     27.06518279182194}, {145., 16.652881277343376`}}]}, 
+   {Hue[0.6264276129843028, 0.08172028419604604, 0.918279715803954], 
+    PolygonBox[{{66.1548268325082, 60.546884168801256`}, {77.25887654486962, 
+     66.28213791402735}, {71.72502256030134, 77.72351728173709}}]}, 
+   {Hue[0.67611522494851, 0.09732613882346264, 0.9026738611765374], 
+    PolygonBox[{{160., 21.256889295567007`}, {150., 31.013314506638707`}, {
+     158.3392539554019, 21.254115281974833`}}]}, 
+   {Hue[0.6345248919297428, 0.027201825901178034`, 0.972798174098822], 
+    PolygonBox[{{155., 20.69124692406467}, {145., 16.652881277343376`}, {
+     157.67566450162826`, 8.856568672888528}}]}, 
+   {Hue[0.6493341165160297, 0.03291210979019199, 0.967087890209808], 
+    PolygonBox[{{110., 6.620016890667976}, {120., 21.391426982310605`}, {
+     111.56964367805404`, 17.76048273544933}}]}, 
+   {Hue[0.8029379506345148, 0.06020077105354338, 0.9397992289464566], 
+    PolygonBox[{{120., 21.391426982310605`}, {121.93752069903502`, 
+     32.346664349590014`}, {111.56964367805404`, 17.76048273544933}}]}, 
+   {Hue[0.6095741808213194, 0.0742206968936392, 0.9257793031063608], 
+    PolygonBox[{{80., 26.325390594876666`}, {85., 43.17038888190778}, {75., 
+     43.31634058428337}}]}, 
+   {Hue[0.7717455459349867, 0.062341238322889514`, 0.9376587616771105], 
+    PolygonBox[{{105., 12.281246478408676`}, {110., 6.620016890667976}, {
+     111.56964367805404`, 17.76048273544933}}]}, 
+   {Hue[0.6482187224570481, 0.07618911088087721, 0.9238108891191228], 
+    PolygonBox[{{165., 22.918359521571944`}, {150., 31.013314506638707`}, {
+     160., 21.256889295567007`}}]}, 
+   {Hue[0.6121230594405974, 0.0845272886465922, 0.9154727113534078], 
+    PolygonBox[{{158.3392539554019, 21.254115281974833`}, {155., 
+     20.69124692406467}, {157.67566450162826`, 8.856568672888528}}]}, 
+   {Hue[0.6102171735156194, 0.10969160837974823`, 0.8903083916202518], 
+    PolygonBox[{{180., 32.26770761690699}, {150., 31.013314506638707`}, {165.,
+      22.918359521571944`}}]}, 
+   {Hue[0.6982530862151155, 0.05523781145385609, 0.9447621885461439], 
+    PolygonBox[{{89.89539187744572, 132.02892724016147`}, {
+     108.43232104806839`, 119.80883843553653`}, {122.04343287070066`, 
+     136.098848093029}}]}, 
+   {Hue[0.7628586521406624, 0.026586116984410935`, 0.9734138830155891], 
+    PolygonBox[{{108.43232104806839`, 119.80883843553653`}, {
+     136.16015685987134`, 133.91349503356008`}, {122.04343287070066`, 
+     136.098848093029}}]}, 
+   {Hue[0.7602485632811649, 0.05610524006123763, 0.9438947599387624], 
+    PolygonBox[{{89.89539187744572, 132.02892724016147`}, {83.4513524187069, 
+     105.98376532400505`}, {108.43232104806839`, 119.80883843553653`}}]}, 
+   {Hue[0.7296139444595334, 0.025326637807089547`, 0.9746733621929105], 
+    PolygonBox[{{196.2893518735413, 46.820964818936915`}, {
+     204.56733009302928`, 62.80438139075906}, {184.42409229480643`, 55.}}]}, 
+   {Hue[0.6185322283325626, 0.09588444974380006, 0.9041155502561999], 
+    PolygonBox[{{184.42409229480643`, 55.}, {150., 31.013314506638707`}, {
+     180., 32.26770761690699}}]}, 
+   {Hue[0.6113031578975441, 0.017244725693593255`, 0.9827552743064067], 
+    PolygonBox[{{186.75764990724258`, 45.}, {184.42409229480643`, 55.}, {180.,
+      32.26770761690699}}]}, 
+   {Hue[0.7966380838521903, 0.04051334047804711, 0.9594866595219529], 
+    PolygonBox[{{85., 43.17038888190778}, {76.4440903922511, 
+     53.97253333645358}, {75., 43.31634058428337}}]}, 
+   {Hue[0.7374595381677108, 0.08905654920962525, 0.9109434507903748], 
+    PolygonBox[{{76.4440903922511, 53.97253333645358}, {77.25887654486962, 
+     66.28213791402735}, {66.1548268325082, 60.546884168801256`}}]}, 
+   {Hue[0.7620283036865869, 0.07388103480386932, 0.9261189651961307], 
+    PolygonBox[{{85.54016338654066, 25.61603165282156}, {93.16141365426188, 
+     35.9026571160108}, {90., 40.21038106826856}}]}, 
+   {Hue[0.8086476388296733, 0.038249426883246174`, 0.9617505731167538], 
+    PolygonBox[{{202.04685509136354`, 95.}, {165.22654007282745`, 
+     106.51195421439053`}, {159.42910429600454`, 82.94662930037384}}]}, 
+   {Hue[0.6067833278914766, 0.02082395417273908, 0.9791760458272609], 
+    PolygonBox[{{202.04685509136354`, 95.}, {186.49004133156404`, 
+     67.34722914135233}, {198.59916075382307`, 73.38948770023197}}]}, 
+   {Hue[0.7037724064886226, 0.10825410138620639`, 0.8917458986137936], 
+    PolygonBox[{{186.49004133156404`, 67.34722914135233}, {185.7871180233181, 
+     65.}, {204.56733009302928`, 62.80438139075906}}]}, 
+   {Hue[0.6078564670578753, 0.027788982096296433`, 0.9722110179037036], 
+    PolygonBox[{{69.48057987445179, 40.53298388064144}, {76.4440903922511, 
+     53.97253333645358}, {66.1548268325082, 60.546884168801256`}}]}, 
+   {Hue[0.7748673497810838, 0.013990597652072334`, 0.9860094023479277], 
+    PolygonBox[{{49.878484231356055`, 100.}, {81.16760265798638, 
+     94.64248823775756}, {79.19277150516439, 103.42132917443297`}}]}, 
+   {Hue[0.8230842054433953, 0.022195677981423634`, 0.9778043220185764], 
+    PolygonBox[{{95., 16.407084089188672`}, {93.16141365426188, 
+     35.9026571160108}, {85.54016338654066, 25.61603165282156}}]}, 
+   {Hue[0.629915336218716, 0.06654514533297373, 0.9334548546670263], 
+    PolygonBox[{{110., 6.620016890667976}, {125., 2.0911071295873}, {120., 
+     21.391426982310605`}}]}, 
+   {Hue[0.8201218543919455, 0.011091582750916484`, 0.9889084172490835], 
+    PolygonBox[{{111.56964367805404`, 17.76048273544933}, {93.16141365426188, 
+     35.9026571160108}, {95., 16.407084089188672`}}]}, 
+   {Hue[0.7222090005082642, 0.032663009456178616`, 0.9673369905438214], 
+    PolygonBox[{{196.2893518735413, 46.820964818936915`}, {
+     186.75764990724258`, 45.}, {190., 39.63435469936017}}]}, 
+   {Hue[0.6112880232274088, 0.07555155693551452, 0.9244484430644855], 
+    PolygonBox[{{186.75764990724258`, 45.}, {180., 32.26770761690699}, {190., 
+     39.63435469936017}}]}, 
+   {Hue[0.6202557768346325, 0.06682155941266066, 0.9331784405873393], 
+    PolygonBox[{{105., 12.281246478408676`}, {111.56964367805404`, 
+     17.76048273544933}, {95., 16.407084089188672`}}]}, 
+   {Hue[0.6386036159636187, 0.02087151952174815, 0.9791284804782519], 
+    PolygonBox[{{190., 39.63435469936017}, {180., 32.26770761690699}, {185., 
+     30.197197120733207`}}]}, 
+   {Hue[0.6709495259091958, 0.04303375786040353, 0.9569662421395965], 
+    PolygonBox[{{180., 32.26770761690699}, {165., 22.918359521571944`}, {170.,
+      14.065948117181541`}}]}, 
+   {Hue[0.8282520711827498, 0.08320772958749545, 0.9167922704125046], 
+    PolygonBox[{{204.56733009302928`, 62.80438139075906}, {185.7871180233181, 
+     65.}, {184.42409229480643`, 55.}}]}, 
+   {Hue[0.6096639356866725, 0.055354679432512155`, 0.9446453205674878], 
+    PolygonBox[{{190., 39.63435469936017}, {185., 30.197197120733207`}, {
+     196.81146939624387`, 30.}}]}, 
+   {Hue[0.7826306724170273, 0.015090122738531164`, 0.9849098772614688], 
+    PolygonBox[{{85., 136.45308366880852`}, {69.84395848546444, 
+     137.6662696731848}, {89.89539187744572, 132.02892724016147`}}]}, 
+   {Hue[0.7408569683488899, 0.10186860046825863`, 0.8981313995317414], 
+    PolygonBox[{{75.59097640770193, 18.398370684028976`}, {85.54016338654066, 
+     25.61603165282156}, {80., 26.325390594876666`}}]}, 
+   {Hue[0.6768185978014049, 0.029999432618803, 0.970000567381197], 
+    PolygonBox[{{85.54016338654066, 25.61603165282156}, {90., 
+     40.21038106826856}, {80., 26.325390594876666`}}]}, 
+   {Hue[0.7137380734692447, 0.10617213610383203`, 0.893827863896168], 
+    PolygonBox[{{75., 43.31634058428337}, {76.4440903922511, 
+     53.97253333645358}, {69.48057987445179, 40.53298388064144}}]}, 
+   {Hue[0.7584455629862191, 0.03932319126615347, 0.9606768087338465], 
+    PolygonBox[{{70., 33.303497580307436`}, {75., 43.31634058428337}, {
+     69.48057987445179, 40.53298388064144}}]}, 
+   {Hue[0.7415210841419898, 0.026221237671226416`, 0.9737787623287736], 
+    PolygonBox[{{160., 21.256889295567007`}, {158.3392539554019, 
+     21.254115281974833`}, {157.67566450162826`, 8.856568672888528}}]}, 
+   {Hue[0.7159133741162298, 0.06712155145171772, 0.9328784485482823], 
+    PolygonBox[{{130., 0.}, {135., 17.780550742348588`}, {125., 
+     2.0911071295873}}]}, 
+   {Hue[0.8116550825468454, 0.06492247401722906, 0.9350775259827709], 
+    PolygonBox[{{170., 14.065948117181541`}, {160., 21.256889295567007`}, {
+     157.67566450162826`, 8.856568672888528}}]}, 
+   {Hue[0.828443581257891, 0.04806087554114735, 0.9519391244588526], 
+    PolygonBox[{{170., 14.065948117181541`}, {165., 22.918359521571944`}, {
+     160., 21.256889295567007`}}]}, 
+   {Hue[0.7735913143041145, 0.0268791239443259, 0.9731208760556741], 
+    PolygonBox[{{105., 12.281246478408676`}, {95., 16.407084089188672`}, {
+     92.95982335920803, 11.660092996488032`}}]}, 
+   {Hue[0.7089471809156491, 0.07141383555458358, 0.9285861644454164], 
+    PolygonBox[{{125., 2.0911071295873}, {135., 17.780550742348588`}, {120., 
+     21.391426982310605`}}]}, 
+   {Hue[0.7028186416778092, 0.06511829077314024, 0.9348817092268598], 
+    PolygonBox[{{192.68344193973928`, 115.}, {175.37598679309008`, 
+     134.9435370539071}, {165.22654007282745`, 106.51195421439053`}}]}, 
+   {Hue[0.8073716814666717, 0.10575590729825923`, 0.8942440927017408], 
+    PolygonBox[{{192.68344193973928`, 115.}, {165.22654007282745`, 
+     106.51195421439053`}, {194.3665181345445, 109.94362268918542`}}]}, 
+   {Hue[0.6009377199994143, 0.09627484043129975, 0.9037251595687003], 
+    PolygonBox[{{185., 30.197197120733207`}, {180., 32.26770761690699}, {170.,
+      14.065948117181541`}}]}, 
+   {Hue[0.7254445758037067, 0.09867372368811111, 0.9013262763118889], 
+    PolygonBox[{{175.37598679309008`, 134.9435370539071}, {
+     149.63862761393915`, 123.53198508263472`}, {165.22654007282745`, 
+     106.51195421439053`}}]}, 
+   {Hue[0.673447487463122, 0.0575487846138627, 0.9424512153861373], 
+    PolygonBox[{{130., 0.}, {135., 0.}, {135., 17.780550742348588`}}]}, 
+   {Hue[0.6084412096712514, 0.0928621311128246, 0.9071378688871754], 
+    PolygonBox[{{203.28255701999979`, 100.}, {194.3665181345445, 
+     109.94362268918542`}, {202.04685509136354`, 95.}}]}, 
+   {Hue[0.7167064829443153, 0.06411787897162657, 0.9358821210283734], 
+    PolygonBox[{{194.3665181345445, 109.94362268918542`}, {
+     165.22654007282745`, 106.51195421439053`}, {202.04685509136354`, 95.}}]}, 
+   {Hue[0.7243981388459048, 0.02023416801559108, 0.9797658319844089], 
+    PolygonBox[{{198.59916075382307`, 73.38948770023197}, {
+     186.49004133156404`, 67.34722914135233}, {204.56733009302928`, 
+     62.80438139075906}}]}, 
+   {Hue[0.6507763976723999, 0.09692609919013817, 0.9030739008098618], 
+    PolygonBox[{{170., 14.065948117181541`}, {157.67566450162826`, 
+     8.856568672888528}, {159.11480779486607`, 6.535964973765772}}]}, 
+   {Hue[0.811887035036913, 0.03634629181745297, 0.963653708182547], 
+    PolygonBox[{{135., 0.}, {140., 0.}, {135., 17.780550742348588`}}]}, 
+   {Hue[0.649559443276207, 0.019829570654206985`, 0.980170429345793], 
+    PolygonBox[{{218.73154423089204`, 80.}, {198.59916075382307`, 
+     73.38948770023197}, {204.56733009302928`, 62.80438139075906}}]}, 
+   {Hue[0.716367341201693, 0.09087353801367537, 0.9091264619863246], 
+    PolygonBox[{{105., 0.}, {110., 6.620016890667976}, {105., 
+     12.281246478408676`}}]}, 
+   {Hue[0.6414118157849518, 0.09966397567104301, 0.900336024328957], 
+    PolygonBox[{{100., 0.}, {105., 12.281246478408676`}, {92.95982335920803, 
+     11.660092996488032`}}]}, 
+   {Hue[0.6320841137973385, 0.06867590381873367, 0.9313240961812663], 
+    PolygonBox[{{95., 16.407084089188672`}, {85.54016338654066, 
+     25.61603165282156}, {92.95982335920803, 11.660092996488032`}}]}, 
+   {Hue[0.7285245007823333, 0.1057840401912975, 0.8942159598087025], 
+    PolygonBox[{{165., 141.39119992409871`}, {156.10140206767835`, 
+     151.21565539716812`}, {149.63862761393915`, 123.53198508263472`}}]}, 
+   {Hue[0.6465765534650928, 0.045654052278713886`, 0.9543459477212861], 
+    PolygonBox[{{165., 141.39119992409871`}, {149.63862761393915`, 
+     123.53198508263472`}, {175.37598679309008`, 134.9435370539071}}]}, 
+   {Hue[0.7670179970198997, 0.010249988668918353`, 0.9897500113310816], 
+    PolygonBox[{{150., 152.42387228038467`}, {136.16015685987134`, 
+     133.91349503356008`}, {149.63862761393915`, 123.53198508263472`}}]}, 
+   {Hue[0.7102638789307879, 0.0774349727867647, 0.9225650272132353], 
+    PolygonBox[{{65., 35.87676770982013}, {60., 23.44038918284467}, {70., 
+     33.303497580307436`}}]}, 
+   {Hue[0.8435358927724139, 0.01956927266168018, 0.9804307273383198], 
+    PolygonBox[{{80., 26.325390594876666`}, {75., 43.31634058428337}, {70., 
+     33.303497580307436`}}]}, 
+   {Hue[0.7716642671701816, 0.016539321688259445`, 0.9834606783117406], 
+    PolygonBox[{{69.48057987445179, 40.53298388064144}, {66.1548268325082, 
+     60.546884168801256`}, {56.4681999101245, 58.93880759670304}}]}, 
+   {Hue[0.7800072303676079, 0.0643986191437641, 0.9356013808562359], 
+    PolygonBox[{{135., 17.780550742348588`}, {140., 0.}, {145., 
+     16.652881277343376`}}]}, 
+   {Hue[0.7163284883475025, 0.10199984963773834`, 0.8980001503622617], 
+    PolygonBox[{{125., 2.0911071295873}, {110., 6.620016890667976}, {120., 
+     0.}}]}, 
+   {Hue[0.6654069247448191, 0.06575762884297487, 0.9342423711570251], 
+    PolygonBox[{{89.89539187744572, 132.02892724016147`}, {
+     122.04343287070066`, 136.098848093029}, {120., 149.06362979342236`}}]}, 
+   {Hue[0.6522325632857098, 0.0872478884881952, 0.9127521115118048], 
+    PolygonBox[{{122.04343287070066`, 136.098848093029}, {136.16015685987134`,
+      133.91349503356008`}, {120., 149.06362979342236`}}]}, 
+   {Hue[0.6780539394727609, 0.05293859530094702, 0.947061404699053], 
+    PolygonBox[{{140., 0.}, {145., 0.}, {145., 16.652881277343376`}}]}, 
+   {Hue[0.7426703798910246, 0.03369746919826799, 0.966302530801732], 
+    PolygonBox[{{130., 0.}, {125., 2.0911071295873}, {125., 0.}}]}, 
+   {Hue[0.6617734322005164, 0.10438297081616144`, 0.8956170291838386], 
+    PolygonBox[{{145., 0.}, {150., 0.}, {145., 16.652881277343376`}}]}, 
+   {Hue[0.7509991791107686, 0.10144990141289578`, 0.8985500985871042], 
+    PolygonBox[{{125., 0.}, {125., 2.0911071295873}, {120., 0.}}]}, 
+   {Hue[0.604062095524851, 0.09420745864690105, 0.905792541353099], 
+    PolygonBox[{{201.07265241256624`, 110.}, {194.3665181345445, 
+     109.94362268918542`}, {203.28255701999979`, 100.}}]}, 
+   {Hue[0.7352188301631928, 0.02256401300233657, 0.9774359869976634], 
+    PolygonBox[{{221.65204228683388`, 60.}, {204.56733009302928`, 
+     62.80438139075906}, {208.0771256725061, 58.5552338446727}}]}, 
+   {Hue[0.7793412303175183, 0.0768498671511314, 0.9231501328488686], 
+    PolygonBox[{{150., 0.}, {157.67566450162826`, 8.856568672888528}, {145., 
+     16.652881277343376`}}]}, 
+   {Hue[0.6399566017836684, 0.027355495232192495`, 0.9726445047678075], 
+    PolygonBox[{{120., 0.}, {110., 6.620016890667976}, {115., 0.}}]}, 
+   {Hue[0.7951631380714516, 0.015612230690025153`, 0.9843877693099748], 
+    PolygonBox[{{52.90543232990362, 55.}, {69.48057987445179, 
+     40.53298388064144}, {56.4681999101245, 58.93880759670304}}]}, 
+   {Hue[0.7591553556290265, 0.05524212743660739, 0.9447578725633926], 
+    PolygonBox[{{66.1548268325082, 60.546884168801256`}, {71.72502256030134, 
+     77.72351728173709}, {56.4681999101245, 58.93880759670304}}]}, 
+   {Hue[0.7413062431422152, 0.016718625665636422`, 0.9832813743343636], 
+    PolygonBox[{{69.84395848546444, 137.6662696731848}, {83.4513524187069, 
+     105.98376532400505`}, {89.89539187744572, 132.02892724016147`}}]}, 
+   {Hue[0.7481299048067275, 0.09168065813523296, 0.908319341864767], 
+    PolygonBox[{{56.387386144134496`, 120.}, {79.19277150516439, 
+     103.42132917443297`}, {83.4513524187069, 105.98376532400505`}}]}, 
+   {Hue[0.737508717031303, 0.0968966568888795, 0.9031033431111205], 
+    PolygonBox[{{89.89539187744572, 132.02892724016147`}, {120., 
+     149.06362979342236`}, {90., 149.19073615544283`}}]}, 
+   {Hue[0.7214671145015176, 0.09360698859238059, 0.9063930114076194], 
+    PolygonBox[{{155., 0.}, {159.11480779486607`, 6.535964973765772}, {
+     157.67566450162826`, 8.856568672888528}}]}, 
+   {Hue[0.8313205834369185, 0.07464420774285108, 0.9253557922571489], 
+    PolygonBox[{{155., 0.}, {157.67566450162826`, 8.856568672888528}, {150., 
+     0.}}]}, 
+   {Hue[0.7071487085476178, 0.062374198374189116`, 0.9376258016258109], 
+    PolygonBox[{{75.59097640770193, 18.398370684028976`}, {80., 
+     26.325390594876666`}, {70., 33.303497580307436`}}]}, 
+   {Hue[0.8155220750631915, 0.0770516736617387, 0.9229483263382613], 
+    PolygonBox[{{70., 33.303497580307436`}, {69.48057987445179, 
+     40.53298388064144}, {65., 35.87676770982013}}]}, 
+   {Hue[0.6135241073682101, 0.06683411505817505, 0.933165884941825], 
+    PolygonBox[{{208.0771256725061, 58.5552338446727}, {204.56733009302928`, 
+     62.80438139075906}, {206.29128318166948`, 54.33131422524687}}]}, 
+   {Hue[0.6015050874539429, 0.049407896190335254`, 0.9505921038096647], 
+    PolygonBox[{{204.56733009302928`, 62.80438139075906}, {196.2893518735413, 
+     46.820964818936915`}, {206.29128318166948`, 54.33131422524687}}]}, 
+   {Hue[0.7844003552721619, 0.028067090660940486`, 0.9719329093390595], 
+    PolygonBox[{{200., 34.537742657602465`}, {190., 39.63435469936017}, {
+     196.81146939624387`, 30.}}]}, 
+   {Hue[0.6377660829956144, 0.08150661974950812, 0.9184933802504919], 
+    PolygonBox[{{199.87977133565005`, 114.90042571661178`}, {
+     192.68344193973928`, 115.}, {194.3665181345445, 109.94362268918542`}}]}, 
+   {Hue[0.7317335046058611, 0.023841883245809048`, 0.976158116754191], 
+    PolygonBox[{{199.87977133565005`, 114.90042571661178`}, {
+     194.3665181345445, 109.94362268918542`}, {201.07265241256624`, 110.}}]}, 
+   {Hue[0.7681288617201911, 0.07404085287991835, 0.9259591471200816], 
+    PolygonBox[{{115., 0.}, {110., 6.620016890667976}, {110., 0.}}]}, 
+   {Hue[0.7309602417321566, 0.011621119161200233`, 0.9883788808387998], 
+    PolygonBox[{{217.34678605527787`, 85.}, {202.04685509136354`, 95.}, {
+     198.59916075382307`, 73.38948770023197}}]}, 
+   {Hue[0.79229690130012, 0.07859851645665461, 0.9214014835433454], 
+    PolygonBox[{{160., 0.}, {159.11480779486607`, 6.535964973765772}, {155., 
+     0.}}]}, 
+   {Hue[0.828894468528471, 0.035443185614605466`, 0.9645568143853945], 
+    PolygonBox[{{165., 141.39119992409871`}, {175.37598679309008`, 
+     134.9435370539071}, {175.33403143527852`, 140.6752872115773}}]}, 
+   {Hue[0.7061198172998511, 0.05754722601202833, 0.9424527739879717], 
+    PolygonBox[{{200.9552698862827, 120.}, {192.68344193973928`, 115.}, {
+     199.87977133565005`, 114.90042571661178`}}]}, 
+   {Hue[0.798150128973156, 0.07601834773428084, 0.9239816522657192], 
+    PolygonBox[{{170., 150.29354470912563`}, {165., 141.39119992409871`}, {
+     175.33403143527852`, 140.6752872115773}}]}, 
+   {Hue[0.7954069126795502, 0.04313552151309408, 0.9568644784869059], 
+    PolygonBox[{{200.9552698862827, 120.}, {200., 135.73415690894973`}, {
+     192.68344193973928`, 115.}}]}, 
+   {Hue[0.6931349747018054, 0.05890979759522874, 0.9410902024047713], 
+    PolygonBox[{{200., 34.537742657602465`}, {196.2893518735413, 
+     46.820964818936915`}, {190., 39.63435469936017}}]}, 
+   {Hue[0.7529820094182336, 0.09117090116963167, 0.9088290988303683], 
+    PolygonBox[{{181.07837456865872`, 7.384411169275609}, {170., 
+     14.065948117181541`}, {175., 3.6348594209297076`}}]}, 
+   {Hue[0.7675594765089104, 0.03352672334695672, 0.9664732766530433], 
+    PolygonBox[{{165., 0.}, {159.11480779486607`, 6.535964973765772}, {160., 
+     0.}}]}, 
+   {Hue[0.6058363249668275, 0.020336116903193147`, 0.9796638830968069], 
+    PolygonBox[{{200., 34.537742657602465`}, {205., 41.36199903152432}, {
+     196.2893518735413, 46.820964818936915`}}]}, 
+   {Hue[0.7733327103491858, 0.03972634543504283, 0.9602736545649572], 
+    PolygonBox[{{205., 41.36199903152432}, {206.29128318166948`, 
+     54.33131422524687}, {196.2893518735413, 46.820964818936915`}}]}, 
+   {Hue[0.6227222890123967, 0.07707367668910292, 0.9229263233108971], 
+    PolygonBox[{{110., 0.}, {110., 6.620016890667976}, {105., 0.}}]}, 
+   {Hue[0.6092852617550036, 0.09770952389345822, 0.9022904761065418], 
+    PolygonBox[{{92.95982335920803, 11.660092996488032`}, {85.54016338654066, 
+     25.61603165282156}, {75.59097640770193, 18.398370684028976`}}]}, 
+   {Hue[0.6927263357282055, 0.10577847368230064`, 0.8942215263176994], 
+    PolygonBox[{{80., 0.}, {92.95982335920803, 11.660092996488032`}, {
+     75.59097640770193, 18.398370684028976`}}]}, 
+   {Hue[0.64187596136618, 0.09928522975916243, 0.9007147702408376], 
+    PolygonBox[{{141.29904949243252`, 155.77161411256355`}, {
+     136.16015685987134`, 133.91349503356008`}, {150., 
+     152.42387228038467`}}]}, 
+   {Hue[0.6235270451040906, 0.04515606198805666, 0.9548439380119433], 
+    PolygonBox[{{222.76152249515218`, 117.95419630526783`}, {
+     201.07265241256624`, 110.}, {205.5123724454302, 105.}}]}, 
+   {Hue[0.7349281703039428, 0.0759239877973149, 0.9240760122026851], 
+    PolygonBox[{{201.07265241256624`, 110.}, {203.28255701999979`, 100.}, {
+     205.5123724454302, 105.}}]}, 
+   {Hue[0.7091734065657582, 0.09158619319811545, 0.9084138068018845], 
+    PolygonBox[{{219.02138863863138`, 90.}, {202.04685509136354`, 95.}, {
+     217.34678605527787`, 85.}}]}, 
+   {Hue[0.6315972827491226, 0.012560457090836086`, 0.9874395429091639], 
+    PolygonBox[{{150., 152.42387228038467`}, {149.63862761393915`, 
+     123.53198508263472`}, {156.10140206767835`, 151.21565539716812`}}]}, 
+   {Hue[0.621375608877574, 0.0728975083527108, 0.9271024916472892], 
+    PolygonBox[{{165., 0.}, {170., 14.065948117181541`}, {159.11480779486607`,
+      6.535964973765772}}]}, 
+   {Hue[0.7915707159218996, 0.07134676720953936, 0.9286532327904606], 
+    PolygonBox[{{211.35866168700016`, 20.}, {196.81146939624387`, 30.}, {195.,
+      19.280213221470163`}}]}, 
+   {Hue[0.6753482260241065, 0.0469829810058745, 0.9530170189941255], 
+    PolygonBox[{{215.09442599730124`, 50.59140244384392}, {
+     206.29128318166948`, 54.33131422524687}, {205., 41.36199903152432}}]}, 
+   {Hue[0.735611317067856, 0.07777652949344449, 0.9222234705065555], 
+    PolygonBox[{{55., 31.136956991277003`}, {65., 35.87676770982013}, {
+     52.90543232990362, 55.}}]}, 
+   {Hue[0.6887570077738121, 0.029805267518559275`, 0.9701947324814407], 
+    PolygonBox[{{65., 35.87676770982013}, {69.48057987445179, 
+     40.53298388064144}, {52.90543232990362, 55.}}]}, 
+   {Hue[0.6714288773262743, 0.031980957534445076`, 0.9680190424655549], 
+    PolygonBox[{{49.878484231356055`, 100.}, {71.72502256030134, 
+     77.72351728173709}, {81.16760265798638, 94.64248823775756}}]}, 
+   {Hue[0.7142148051253644, 0.051075604836578914`, 0.9489243951634211], 
+    PolygonBox[{{105., 0.}, {105., 12.281246478408676`}, {100., 0.}}]}, 
+   {Hue[0.7537211475830267, 0.03769647706364665, 0.9623035229363534], 
+    PolygonBox[{{135., 157.34483711718588`}, {136.16015685987134`, 
+     133.91349503356008`}, {141.29904949243252`, 155.77161411256355`}}]}, 
+   {Hue[0.8078261644350211, 0.0920025801068326, 0.9079974198931674], 
+    PolygonBox[{{155., 157.43451801156885`}, {156.10140206767835`, 
+     151.21565539716812`}, {160., 154.350395918005}}]}, 
+   {Hue[0.7055014475707323, 0.035073574574191135`, 0.9649264254258089], 
+    PolygonBox[{{170., 0.}, {170., 14.065948117181541`}, {165., 0.}}]}, 
+   {Hue[0.750736369066577, 0.09275034688895067, 0.9072496531110493], 
+    PolygonBox[{{120., 149.06362979342236`}, {136.16015685987134`, 
+     133.91349503356008`}, {135., 157.34483711718588`}}]}, 
+   {Hue[0.6546069262454165, 0.10153333408144483`, 0.8984666659185552], 
+    PolygonBox[{{124.55462977693469`, 158.24728126722528`}, {120., 
+     149.06362979342236`}, {135., 157.34483711718588`}}]}, 
+   {Hue[0.6542522649250476, 0.10408879321718256`, 0.8959112067828174], 
+    PolygonBox[{{200., 135.73415690894973`}, {175.37598679309008`, 
+     134.9435370539071}, {192.68344193973928`, 115.}}]}, 
+   {Hue[0.7657962555807749, 0.10845062024529806`, 0.8915493797547019], 
+    PolygonBox[{{199.87977133565005`, 114.90042571661178`}, {
+     201.07265241256624`, 110.}, {200.9552698862827, 120.}}]}, 
+   {Hue[0.7568846874139595, 0.020627826696697493`, 0.9793721733033025], 
+    PolygonBox[{{100., 0.}, {92.95982335920803, 11.660092996488032`}, {95., 
+     0.}}]}, 
+   {Hue[0.7289540264493335, 0.010135761104857033`, 0.989864238895143], 
+    PolygonBox[{{181.07837456865872`, 7.384411169275609}, {185., 
+     30.197197120733207`}, {170., 14.065948117181541`}}]}, 
+   {Hue[0.6355296882329817, 0.01129481843951885, 0.9887051815604811], 
+    PolygonBox[{{118.92401162373363`, 164.85343007062022`}, {120., 
+     149.06362979342236`}, {124.55462977693469`, 158.24728126722528`}}]}, 
+   {Hue[0.7592256151849791, 0.09362716407066818, 0.9063728359293318], 
+    PolygonBox[{{195., 19.280213221470163`}, {185., 30.197197120733207`}, {
+     181.07837456865872`, 7.384411169275609}}]}, 
+   {Hue[0.651831164184895, 0.0825368407450292, 0.9174631592549708], 
+    PolygonBox[{{195., 19.280213221470163`}, {196.81146939624387`, 30.}, {
+     185., 30.197197120733207`}}]}, 
+   {Hue[0.6760370115967, 0.09244794371988341, 0.9075520562801166], 
+    PolygonBox[{{175., 0.}, {175., 3.6348594209297076`}, {170., 0.}}]}, 
+   {Hue[0.6109389532610997, 0.03159951663273808, 0.9684004833672619], 
+    PolygonBox[{{175., 3.6348594209297076`}, {170., 14.065948117181541`}, {
+     170., 0.}}]}, 
+   {Hue[0.6274722300477945, 0.07373891534572263, 0.9262610846542774], 
+    PolygonBox[{{155., 157.43451801156885`}, {153.07454660755104`, 
+     164.6245026537913}, {150., 152.42387228038467`}}]}, 
+   {Hue[0.7800993525565784, 0.033354431706490995`, 0.966645568293509], 
+    PolygonBox[{{155., 157.43451801156885`}, {150., 152.42387228038467`}, {
+     156.10140206767835`, 151.21565539716812`}}]}, 
+   {Hue[0.646472635678211, 0.10255601232822564`, 0.8974439876717744], 
+    PolygonBox[{{156.10140206767835`, 151.21565539716812`}, {165., 
+     141.39119992409871`}, {160., 154.350395918005}}]}, 
+   {Hue[0.8250709900472408, 0.055274402234587905`, 0.9447255977654121], 
+    PolygonBox[{{175.33403143527852`, 140.6752872115773}, {
+     175.37598679309008`, 134.9435370539071}, {200., 135.73415690894973`}}]}, 
+   {Hue[0.6716258488821852, 0.02377892759001854, 0.9762210724099815], 
+    PolygonBox[{{210.44765668976078`, 35.}, {200., 34.537742657602465`}, {
+     196.81146939624387`, 30.}}]}, 
+   {Hue[0.7052060566955449, 0.019066050198328965`, 0.980933949801671], 
+    PolygonBox[{{160., 154.350395918005}, {165., 141.39119992409871`}, {170., 
+     150.29354470912563`}}]}, 
+   {Hue[0.7397490690890612, 0.09684964879296643, 0.9031503512070336], 
+    PolygonBox[{{46.817521418680215`, 65.}, {56.4681999101245, 
+     58.93880759670304}, {71.72502256030134, 77.72351728173709}}]}, 
+   {Hue[0.7354516064929828, 0.07702744928458505, 0.922972550715415], 
+    PolygonBox[{{70., 152.41194085848122`}, {85., 136.45308366880852`}, {90., 
+     149.19073615544283`}}]}, 
+   {Hue[0.845707890787519, 0.015521641756525706`, 0.9844783582434743], 
+    PolygonBox[{{85., 136.45308366880852`}, {89.89539187744572, 
+     132.02892724016147`}, {90., 149.19073615544283`}}]}, 
+   {Hue[0.8149200388337681, 0.09273763931237311, 0.9072623606876269], 
+    PolygonBox[{{52.90543232990362, 55.}, {56.4681999101245, 
+     58.93880759670304}, {46.817521418680215`, 65.}}]}, 
+   {Hue[0.821036864802301, 0.0977800588308243, 0.9022199411691757], 
+    PolygonBox[{{38.95293040669908, 85.}, {71.72502256030134, 
+     77.72351728173709}, {49.878484231356055`, 100.}}]}, 
+   {Hue[0.7508931989462634, 0.10113997420690746`, 0.8988600257930925], 
+    PolygonBox[{{95., 0.}, {92.95982335920803, 11.660092996488032`}, {90., 
+     0.}}]}, 
+   {Hue[0.7263946306808406, 0.09876191123349931, 0.9012380887665007], 
+    PolygonBox[{{153.07454660755104`, 164.6245026537913}, {
+     141.29904949243252`, 155.77161411256355`}, {150., 
+     152.42387228038467`}}]}, 
+   {Hue[0.6666051569069545, 0.058477959230376575`, 0.9415220407696234], 
+    PolygonBox[{{160., 154.350395918005}, {170., 150.29354470912563`}, {175., 
+     163.52457989864448`}}]}, 
+   {Hue[0.7751915240177223, 0.04897982299081072, 0.9510201770091893], 
+    PolygonBox[{{140., 165.22698879010753`}, {135., 157.34483711718588`}, {
+     141.29904949243252`, 155.77161411256355`}}]}, 
+   {Hue[0.7038906737302131, 0.03192118874066352, 0.9680788112593365], 
+    PolygonBox[{{219.02138863863138`, 90.}, {205.5123724454302, 105.}, {
+     203.28255701999979`, 100.}}]}, 
+   {Hue[0.7889133742252842, 0.0752295156324555, 0.9247704843675445], 
+    PolygonBox[{{219.02138863863138`, 90.}, {203.28255701999979`, 100.}, {
+     202.04685509136354`, 95.}}]}, 
+   {Hue[0.7565206046402324, 0.025115457550610065`, 0.9748845424493899], 
+    PolygonBox[{{208.0771256725061, 58.5552338446727}, {206.29128318166948`, 
+     54.33131422524687}, {215.09442599730124`, 50.59140244384392}}]}, 
+   {Hue[0.6521858093286188, 0.03251847456086643, 0.9674815254391336], 
+    PolygonBox[{{180., 0.}, {181.07837456865872`, 7.384411169275609}, {175., 
+     3.6348594209297076`}}]}, 
+   {Hue[0.6665688890823028, 0.06741137826118915, 0.9325886217388109], 
+    PolygonBox[{{180., 0.}, {175., 3.6348594209297076`}, {175., 0.}}]}, 
+   {Hue[0.6269438967326352, 0.058167278736106054`, 0.941832721263894], 
+    PolygonBox[{{221.65204228683388`, 60.}, {208.0771256725061, 
+     58.5552338446727}, {215.09442599730124`, 50.59140244384392}}]}, 
+   {Hue[0.6950518322121627, 0.08655797306592228, 0.9134420269340777], 
+    PolygonBox[{{205., 41.36199903152432}, {200., 34.537742657602465`}, {
+     210.44765668976078`, 35.}}]}, 
+   {Hue[0.8012356584892648, 0.0859460779267196, 0.9140539220732804], 
+    PolygonBox[{{217.34678605527787`, 85.}, {198.59916075382307`, 
+     73.38948770023197}, {218.73154423089204`, 80.}}]}, 
+   {Hue[0.6588193860588041, 0.021061552576692177`, 0.9789384474233078], 
+    PolygonBox[{{215.09442599730124`, 50.59140244384392}, {205., 
+     41.36199903152432}, {211.64230202226554`, 40.}}]}, 
+   {Hue[0.826762133867346, 0.08912092757102108, 0.9108790724289789], 
+    PolygonBox[{{48.51168133817919, 122.55444511087785`}, {54.62598208073642, 
+     110.}, {56.387386144134496`, 120.}}]}, 
+   {Hue[0.7624939542706367, 0.03130503162168807, 0.9686949683783119], 
+    PolygonBox[{{54.62598208073642, 110.}, {79.19277150516439, 
+     103.42132917443297`}, {56.387386144134496`, 120.}}]}, 
+   {Hue[0.7561888560238471, 0.07236945072422918, 0.9276305492757708], 
+    PolygonBox[{{56.387386144134496`, 120.}, {83.4513524187069, 
+     105.98376532400505`}, {69.84395848546444, 137.6662696731848}}]}, 
+   {Hue[0.6673893272430277, 0.06202214367922243, 0.9379778563207776], 
+    PolygonBox[{{65., 0.}, {75.59097640770193, 18.398370684028976`}, {60., 
+     23.44038918284467}}]}, 
+   {Hue[0.765005982869293, 0.060213450666168566`, 0.9397865493338314], 
+    PolygonBox[{{75.59097640770193, 18.398370684028976`}, {70., 
+     33.303497580307436`}, {60., 23.44038918284467}}]}, 
+   {Hue[0.6570950329462901, 0.05619177470278647, 0.9438082252972135], 
+    PolygonBox[{{52.90543232990362, 55.}, {46.817521418680215`, 65.}, {
+     32.45967504746217, 60.}}]}, 
+   {Hue[0.6127851306572503, 0.06259666310893519, 0.9374033368910648], 
+    PolygonBox[{{60., 23.44038918284467}, {65., 35.87676770982013}, {55., 
+     31.136956991277003`}}]}, 
+   {Hue[0.7586804249186332, 0.09371818454605152, 0.9062818154539485], 
+    PolygonBox[{{90., 0.}, {92.95982335920803, 11.660092996488032`}, {85., 
+     0.}}]}, 
+   {Hue[0.7659615781944537, 0.05701687162056157, 0.9429831283794384], 
+    PolygonBox[{{215., 32.47025778084033}, {211.64230202226554`, 40.}, {
+     210.44765668976078`, 35.}}]}, 
+   {Hue[0.6719215608504155, 0.022881812676718294`, 0.9771181873232817], 
+    PolygonBox[{{211.64230202226554`, 40.}, {205., 41.36199903152432}, {
+     210.44765668976078`, 35.}}]}, 
+   {Hue[0.6174074274106813, 0.06645872197072944, 0.9335412780292706], 
+    PolygonBox[{{95., 167.7638806855681}, {90., 149.19073615544283`}, {105., 
+     159.2834524309274}}]}, 
+   {Hue[0.6065189230997888, 0.09682082773629697, 0.903179172263703], 
+    PolygonBox[{{90., 149.19073615544283`}, {120., 149.06362979342236`}, {
+     105., 159.2834524309274}}]}, 
+   {Hue[0.63190530778148, 0.10756355163611242`, 0.8924364483638876], 
+    PolygonBox[{{124.55462977693469`, 158.24728126722528`}, {135., 
+     157.34483711718588`}, {128.04630559057824`, 164.36829111655715`}}]}, 
+   {Hue[0.602682436703254, 0.0633262825334302, 0.9366737174665698], 
+    PolygonBox[{{231.14355425888493`, 100.2818064335512}, {205.5123724454302, 
+     105.}, {219.02138863863138`, 90.}}]}, 
+   {Hue[0.6753617810659933, 0.1074300442106303, 0.8925699557893697], 
+    PolygonBox[{{217.34678605527787`, 85.}, {218.73154423089204`, 80.}, {
+     219.02138863863138`, 90.}}]}, 
+   {Hue[0.7335587580803192, 0.10902268739759413`, 0.8909773126024059], 
+    PolygonBox[{{185.31035559530596`, 0.9370261802924063}, {
+     181.07837456865872`, 7.384411169275609}, {180., 0.}}]}, 
+   {Hue[0.6740101739299423, 0.09155892998368698, 0.908441070016313], 
+    PolygonBox[{{189.11453865757335`, 6.135944033287757}, {195., 
+     19.280213221470163`}, {181.07837456865872`, 7.384411169275609}}]}, 
+   {Hue[0.6824696933750148, 0.10660863186461778`, 0.8933913681353822], 
+    PolygonBox[{{118.92401162373363`, 164.85343007062022`}, {
+     124.55462977693469`, 158.24728126722528`}, {128.04630559057824`, 
+     164.36829111655715`}}]}, 
+   {Hue[0.6300616335036399, 0.014130290868241024`, 0.985869709131759], 
+    PolygonBox[{{190., 0.}, {195., 0.}, {189.11453865757335`, 
+     6.135944033287757}}]}, 
+   {Hue[0.6751164432538781, 0.04335426378858298, 0.956645736211417], 
+    PolygonBox[{{128.04630559057824`, 164.36829111655715`}, {135., 
+     157.34483711718588`}, {140., 165.22698879010753`}}]}, 
+   {Hue[0.6503972040168657, 0.04661769566765217, 0.9533823043323478], 
+    PolygonBox[{{155., 157.43451801156885`}, {160., 154.350395918005}, {
+     153.07454660755104`, 164.6245026537913}}]}, 
+   {Hue[0.83558048707847, 0.011212385233317801`, 0.9887876147666822], 
+    PolygonBox[{{105., 159.2834524309274}, {120., 149.06362979342236`}, {
+     118.92401162373363`, 164.85343007062022`}}]}, 
+   {Hue[0.6551411005378652, 0.0860871565710889, 0.9139128434289111], 
+    PolygonBox[{{128.04630559057824`, 164.36829111655715`}, {140., 
+     165.22698879010753`}, {130., 168.31921463515886`}}]}, 
+   {Hue[0.6172259304418811, 0.06562515765357779, 0.9343748423464222], 
+    PolygonBox[{{85., 0.}, {92.95982335920803, 11.660092996488032`}, {80., 
+     0.}}]}, 
+   {Hue[0.6529393265202521, 0.01805670564180495, 0.981943294358195], 
+    PolygonBox[{{218.73154423089204`, 80.}, {204.56733009302928`, 
+     62.80438139075906}, {221.65204228683388`, 60.}}]}, 
+   {Hue[0.6691000682713414, 0.019949422139647233`, 0.9800505778603528], 
+    PolygonBox[{{215.09442599730124`, 50.59140244384392}, {
+     211.64230202226554`, 40.}, {221.46214779153615`, 50.}}]}, 
+   {Hue[0.7355140456271199, 0.04541487734040206, 0.9545851226595979], 
+    PolygonBox[{{229.11484455202486`, 70.}, {218.73154423089204`, 80.}, {
+     221.65204228683388`, 60.}}]}, 
+   {Hue[0.7905679874392038, 0.03063457786270074, 0.9693654221372993], 
+    PolygonBox[{{185., 0.}, {190., 0.}, {185.31035559530596`, 
+     0.9370261802924063}}]}, 
+   {Hue[0.7143836091797628, 0.10870839959372725`, 0.8912916004062728], 
+    PolygonBox[{{189.11453865757335`, 6.135944033287757}, {
+     181.07837456865872`, 7.384411169275609}, {185.31035559530596`, 
+     0.9370261802924063}}]}, 
+   {Hue[0.609749482983137, 0.026251260557214273`, 0.9737487394427857], 
+    PolygonBox[{{190., 160.4952968896452}, {175.33403143527852`, 
+     140.6752872115773}, {200., 135.73415690894973`}}]}, 
+   {Hue[0.7230668943498736, 0.04095486064070031, 0.9590451393592997], 
+    PolygonBox[{{200.9552698862827, 120.}, {201.07265241256624`, 110.}, {
+     222.76152249515218`, 117.95419630526783`}}]}, 
+   {Hue[0.6196662452512992, 0.08533169591297174, 0.9146683040870283], 
+    PolygonBox[{{202.8547979078312, 135.}, {206.94054198463226`, 145.}, {200.,
+      135.73415690894973`}}]}, 
+   {Hue[0.7975960398897869, 0.023437410963015992`, 0.976562589036984], 
+    PolygonBox[{{190., 0.}, {189.11453865757335`, 6.135944033287757}, {
+     185.31035559530596`, 0.9370261802924063}}]}, 
+   {Hue[0.7745860190064646, 0.06341250751060634, 0.9365874924893937], 
+    PolygonBox[{{185.31035559530596`, 0.9370261802924063}, {180., 0.}, {185., 
+     0.}}]}, 
+   {Hue[0.7025443288682733, 0.06502197190581516, 0.9349780280941848], 
+    PolygonBox[{{145., 168.639263762724}, {141.29904949243252`, 
+     155.77161411256355`}, {153.07454660755104`, 164.6245026537913}}]}, 
+   {Hue[0.6131122231864145, 0.08198323657540052, 0.9180167634245995], 
+    PolygonBox[{{180., 161.12236819385356`}, {170., 150.29354470912563`}, {
+     175.33403143527852`, 140.6752872115773}}]}, 
+   {Hue[0.7558471950170942, 0.06447266043850597, 0.935527339561494], 
+    PolygonBox[{{200., 135.73415690894973`}, {200.9552698862827, 120.}, {
+     202.8547979078312, 135.}}]}, 
+   {Hue[0.7752040975241095, 0.0454315816830867, 0.9545684183169133], 
+    PolygonBox[{{34.540308154630225`, 91.61623107223511}, {
+     26.234229756813008`, 90.}, {38.95293040669908, 85.}}]}, 
+   {Hue[0.6228779828192941, 0.09370093088080433, 0.9062990691191957], 
+    PolygonBox[{{46.817521418680215`, 65.}, {71.72502256030134, 
+     77.72351728173709}, {38.95293040669908, 85.}}]}, 
+   {Hue[0.7092638888885188, 0.044744051287945896`, 0.9552559487120541], 
+    PolygonBox[{{49.878484231356055`, 100.}, {54.62598208073642, 110.}, {
+     48.51168133817919, 122.55444511087785`}}]}, 
+   {Hue[0.6808576669754028, 0.05005329921881596, 0.949946700781184], 
+    PolygonBox[{{221.65204228683388`, 60.}, {215.09442599730124`, 
+     50.59140244384392}, {221.46214779153615`, 50.}}]}, 
+   {Hue[0.6879208386924474, 0.036292910187135985`, 0.963707089812864], 
+    PolygonBox[{{210.44765668976078`, 35.}, {196.81146939624387`, 30.}, {
+     211.35866168700016`, 20.}}]}, 
+   {Hue[0.8303848164628282, 0.05869637960929841, 0.9413036203907016], 
+    PolygonBox[{{125., 170.35779509368774`}, {128.04630559057824`, 
+     164.36829111655715`}, {130., 168.31921463515886`}}]}, 
+   {Hue[0.634515551563038, 0.037522337956698903`, 0.9624776620433011], 
+    PolygonBox[{{140., 165.22698879010753`}, {141.29904949243252`, 
+     155.77161411256355`}, {145., 168.639263762724}}]}, 
+   {Hue[0.6310101103686095, 0.03864366442254619, 0.9613563355774538], 
+    PolygonBox[{{220., 36.269720135717776`}, {211.64230202226554`, 40.}, {
+     215., 32.47025778084033}}]}, 
+   {Hue[0.6927312529173536, 0.09952217392767604, 0.900477826072324], 
+    PolygonBox[{{80., 0.}, {75.59097640770193, 18.398370684028976`}, {75., 
+     0.}}]}, 
+   {Hue[0.7791630434442185, 0.02848226220235517, 0.9715177377976448], 
+    PolygonBox[{{60., 23.44038918284467}, {55., 31.136956991277003`}, {45., 
+     27.634305709036795`}}]}, 
+   {Hue[0.6168844719072315, 0.031040508979226278`, 0.9689594910207737], 
+    PolygonBox[{{140., 180.}, {140., 165.22698879010753`}, {145., 
+     168.639263762724}}]}, 
+   {Hue[0.8244280237759777, 0.01714864276058603, 0.982851357239414], 
+    PolygonBox[{{195., 0.}, {200., 0.}, {189.11453865757335`, 
+     6.135944033287757}}]}, 
+   {Hue[0.6297077467587106, 0.08516719673904283, 0.9148328032609572], 
+    PolygonBox[{{115., 178.19175884392325`}, {118.92401162373363`, 
+     164.85343007062022`}, {125., 170.35779509368774`}}]}, 
+   {Hue[0.6405001092698664, 0.046033184484944645`, 0.9539668155150554], 
+    PolygonBox[{{118.92401162373363`, 164.85343007062022`}, {
+     128.04630559057824`, 164.36829111655715`}, {125., 
+     170.35779509368774`}}]}, 
+   {Hue[0.6691088983371603, 0.02436669624300758, 0.9756333037569924], 
+    PolygonBox[{{130., 168.31921463515886`}, {140., 165.22698879010753`}, {
+     135., 180.}}]}, 
+   {Hue[0.6912454450337286, 0.0876289855548179, 0.9123710144451821], 
+    PolygonBox[{{21.101192479584313`, 115.}, {49.878484231356055`, 100.}, {
+     48.51168133817919, 122.55444511087785`}}]}, 
+   {Hue[0.6215532322206478, 0.04041945933436675, 0.9595805406656333], 
+    PolygonBox[{{56.387386144134496`, 120.}, {69.84395848546444, 
+     137.6662696731848}, {48.51168133817919, 122.55444511087785`}}]}, 
+   {Hue[0.7587761691031341, 0.032631857372606876`, 0.9673681426273931], 
+    PolygonBox[{{221.46214779153615`, 50.}, {211.64230202226554`, 40.}, {220.,
+      36.269720135717776`}}]}, 
+   {Hue[0.6441651405893161, 0.10477190117332325`, 0.8952280988266768], 
+    PolygonBox[{{215., 32.47025778084033}, {210.44765668976078`, 35.}, {
+     211.35866168700016`, 20.}}]}, 
+   {Hue[0.7316800038605801, 0.1082868968224866, 0.8917131031775134], 
+    PolygonBox[{{225., 28.194067673528124`}, {215., 32.47025778084033}, {
+     211.35866168700016`, 20.}}]}, 
+   {Hue[0.6811435996911348, 0.05706813286045587, 0.9429318671395441], 
+    PolygonBox[{{75., 0.}, {75.59097640770193, 18.398370684028976`}, {70., 
+     0.}}]}, 
+   {Hue[0.6533773281352109, 0.019816203898196494`, 0.9801837961018035], 
+    PolygonBox[{{215., 135.90282312287218`}, {202.8547979078312, 135.}, {
+     211.7343895629776, 130.}}]}, 
+   {Hue[0.6341979893272709, 0.02432919887075491, 0.9756708011292451], 
+    PolygonBox[{{202.8547979078312, 135.}, {200.9552698862827, 120.}, {
+     211.7343895629776, 130.}}]}, 
+   {Hue[0.8175280941518837, 0.058659317923268284`, 0.9413406820767317], 
+    PolygonBox[{{229.24725942438226`, 75.}, {219.02138863863138`, 90.}, {
+     218.73154423089204`, 80.}}]}, 
+   {Hue[0.7454698428825126, 0.04617344089324693, 0.9538265591067531], 
+    PolygonBox[{{229.24725942438226`, 75.}, {218.73154423089204`, 80.}, {
+     229.11484455202486`, 70.}}]}, 
+   {Hue[0.6274754590531226, 0.059482993398803696`, 0.9405170066011963], 
+    PolygonBox[{{240., 55.}, {221.46214779153615`, 50.}, {230.46936909048924`,
+      44.21453541445382}}]}, 
+   {Hue[0.752719578987775, 0.10517070003605089`, 0.8948292999639491], 
+    PolygonBox[{{221.46214779153615`, 50.}, {220., 36.269720135717776`}, {
+     224.699038298841, 36.45155706337732}}]}, 
+   {Hue[0.7373876812100258, 0.058763959364179885`, 0.9412360406358201], 
+    PolygonBox[{{240., 80.}, {240., 85.}, {229.24725942438226`, 75.}}]}, 
+   {Hue[0.6590381225151907, 0.036583047368882626`, 0.9634169526311174], 
+    PolygonBox[{{200., 0.}, {195., 19.280213221470163`}, {189.11453865757335`,
+      6.135944033287757}}]}, 
+   {Hue[0.6330788390263561, 0.04014535138791453, 0.9598546486120855], 
+    PolygonBox[{{28.328817986329682`, 75.14834154758057}, {
+     46.817521418680215`, 65.}, {38.95293040669908, 85.}}]}, 
+   {Hue[0.7268959290849464, 0.058690054306414274`, 0.9413099456935857], 
+    PolygonBox[{{38.95293040669908, 85.}, {49.878484231356055`, 100.}, {
+     34.540308154630225`, 91.61623107223511}}]}, 
+   {Hue[0.7112120273152323, 0.021955436675893614`, 0.9780445633241064], 
+    PolygonBox[{{166.28399741198575`, 174.21898821436446`}, {
+     153.07454660755104`, 164.6245026537913}, {160., 154.350395918005}}]}, 
+   {Hue[0.798515341742167, 0.046973315205695476`, 0.9530266847943045], 
+    PolygonBox[{{166.28399741198575`, 174.21898821436446`}, {160., 
+     154.350395918005}, {175., 163.52457989864448`}}]}, 
+   {Hue[0.6904739730717833, 0.09568280639012583, 0.9043171936098742], 
+    PolygonBox[{{40., 13.018266211929564`}, {60., 23.44038918284467}, {45., 
+     27.634305709036795`}}]}, 
+   {Hue[0.7049767477942146, 0.10568611828396601`, 0.894313881716034], 
+    PolygonBox[{{55., 31.136956991277003`}, {52.90543232990362, 55.}, {45., 
+     27.634305709036795`}}]}, 
+   {Hue[0.726608905441769, 0.06468325969706967, 0.9353167403029303], 
+    PolygonBox[{{175., 163.52457989864448`}, {170., 150.29354470912563`}, {
+     180., 161.12236819385356`}}]}, 
+   {Hue[0.7620101246443464, 0.07857939134703451, 0.9214206086529655], 
+    PolygonBox[{{60., 148.6699889685378}, {69.84395848546444, 
+     137.6662696731848}, {70., 152.41194085848122`}}]}, 
+   {Hue[0.6552498388973474, 0.04067321382004996, 0.95932678617995], 
+    PolygonBox[{{69.84395848546444, 137.6662696731848}, {85., 
+     136.45308366880852`}, {70., 152.41194085848122`}}]}, 
+   {Hue[0.6420756507605896, 0.09607127386184644, 0.9039287261381536], 
+    PolygonBox[{{105., 159.2834524309274}, {118.92401162373363`, 
+     164.85343007062022`}, {110., 175.47729144494096`}}]}, 
+   {Hue[0.631742654501453, 0.10218859820777337`, 0.8978114017922266], 
+    PolygonBox[{{80., 168.29522323173276`}, {90., 149.19073615544283`}, {95., 
+     167.7638806855681}}]}, 
+   {Hue[0.7374176887647446, 0.10398485144927927`, 0.8960151485507207], 
+    PolygonBox[{{28.744143190454736`, 44.14128625656295}, {52.90543232990362, 
+     55.}, {32.45967504746217, 60.}}]}, 
+   {Hue[0.740011428763154, 0.024039905813846407`, 0.9759600941861536], 
+    PolygonBox[{{70., 0.}, {75.59097640770193, 18.398370684028976`}, {65., 
+     0.}}]}, 
+   {Hue[0.8317258686804617, 0.06264910769272258, 0.9373508923072774], 
+    PolygonBox[{{220., 36.269720135717776`}, {215., 32.47025778084033}, {225.,
+      28.194067673528124`}}]}, 
+   {Hue[0.7313162723283007, 0.046254221881832924`, 0.9537457781181671], 
+    PolygonBox[{{230.46936909048924`, 44.21453541445382}, {
+     221.46214779153615`, 50.}, {224.699038298841, 36.45155706337732}}]}, 
+   {Hue[0.6612540938745843, 0.08998105510457588, 0.9100189448954241], 
+    PolygonBox[{{175., 163.52457989864448`}, {180., 161.12236819385356`}, {
+     178.2737153335674, 164.25718649757408`}}]}, 
+   {Hue[0.6846470482388309, 0.04894964488290732, 0.9510503551170927], 
+    PolygonBox[{{190., 160.4952968896452}, {200., 135.73415690894973`}, {
+     206.94054198463226`, 145.}}]}, 
+   {Hue[0.7897922694870294, 0.1054405388241082, 0.8945594611758918], 
+    PolygonBox[{{179.66546206475402`, 176.37164304253446`}, {175., 
+     163.52457989864448`}, {178.2737153335674, 164.25718649757408`}}]}, 
+   {Hue[0.7425966033263066, 0.08943011352303198, 0.910569886476968], 
+    PolygonBox[{{211.7343895629776, 130.}, {200.9552698862827, 120.}, {
+     222.76152249515218`, 117.95419630526783`}}]}, 
+   {Hue[0.7555177209553238, 0.056318498968649044`, 0.943681501031351], 
+    PolygonBox[{{205., 0.}, {195., 19.280213221470163`}, {200., 0.}}]}, 
+   {Hue[0.6589823121357933, 0.01351874149432597, 0.986481258505674], 
+    PolygonBox[{{205., 0.}, {211.35866168700016`, 20.}, {195., 
+     19.280213221470163`}}]}, 
+   {Hue[0.6408420509743122, 0.015709057822923866`, 0.9842909421770761], 
+    PolygonBox[{{222.76152249515218`, 117.95419630526783`}, {
+     205.5123724454302, 105.}, {231.14355425888493`, 100.2818064335512}}]}, 
+   {Hue[0.609976079048673, 0.06207418142341592, 0.9379258185765841], 
+    PolygonBox[{{240., 60.}, {229.11484455202486`, 70.}, {221.65204228683388`,
+      60.}}]}, 
+   {Hue[0.6923080515521175, 0.10829864608095374`, 0.8917013539190463], 
+    PolygonBox[{{48.51168133817919, 122.55444511087785`}, {69.84395848546444, 
+     137.6662696731848}, {60., 148.6699889685378}}]}, 
+   {Hue[0.6226082756107225, 0.10738945301897374`, 0.8926105469810263], 
+    PolygonBox[{{80., 168.29522323173276`}, {95., 167.7638806855681}, {
+     92.86188308782351, 171.8252758949298}}]}, 
+   {Hue[0.7426040147488969, 0.08987435225520823, 0.9101256477447918], 
+    PolygonBox[{{50., 152.4670002436089}, {45., 148.59626594858048`}, {60., 
+     148.6699889685378}}]}, 
+   {Hue[0.7355771339721018, 0.07725318126399516, 0.9227468187360048], 
+    PolygonBox[{{100., 175.30553941569303`}, {105., 159.2834524309274}, {110.,
+      175.47729144494096`}}]}, 
+   {Hue[0.7421013543012999, 0.021469549283509193`, 0.9785304507164908], 
+    PolygonBox[{{150., 180.}, {145., 168.639263762724}, {156.04530732391015`, 
+     175.9963320811255}}]}, 
+   {Hue[0.7684387175607915, 0.03903903428729061, 0.9609609657127094], 
+    PolygonBox[{{145., 168.639263762724}, {153.07454660755104`, 
+     164.6245026537913}, {156.04530732391015`, 175.9963320811255}}]}, 
+   {Hue[0.635330398096286, 0.10109074939101359`, 0.8989092506089864], 
+    PolygonBox[{{190., 160.4952968896452}, {180., 161.12236819385356`}, {
+     175.33403143527852`, 140.6752872115773}}]}, 
+   {Hue[0.6107249118488198, 0.07248287785295715, 0.9275171221470428], 
+    PolygonBox[{{211.7343895629776, 130.}, {222.76152249515218`, 
+     117.95419630526783`}, {225.410007777424, 125.}}]}, 
+   {Hue[0.7989459525551639, 0.09319695676066542, 0.9068030432393346], 
+    PolygonBox[{{178.2737153335674, 164.25718649757408`}, {180., 
+     161.12236819385356`}, {185., 163.04257699824538`}}]}, 
+   {Hue[0.7058981221947761, 0.10018855408262328`, 0.8998114459173767], 
+    PolygonBox[{{32.45967504746217, 60.}, {46.817521418680215`, 65.}, {
+     28.328817986329682`, 75.14834154758057}}]}, 
+   {Hue[0.8264464015000268, 0.06718553626628876, 0.9328144637337112], 
+    PolygonBox[{{206.94054198463226`, 145.}, {202.8547979078312, 135.}, {215.,
+      135.90282312287218`}}]}, 
+   {Hue[0.8069084477140663, 0.08531546550415958, 0.9146845344958404], 
+    PolygonBox[{{240., 105.}, {240., 110.}, {238.37201267983664`, 
+     102.90998919638184`}}]}, 
+   {Hue[0.6604696777391332, 0.08417185412459738, 0.9158281458754026], 
+    PolygonBox[{{240., 70.}, {229.24725942438226`, 75.}, {229.11484455202486`,
+      70.}}]}, 
+   {Hue[0.7998171513951928, 0.1088703185915324, 0.8911296814084676], 
+    PolygonBox[{{240., 55.}, {221.65204228683388`, 60.}, {221.46214779153615`,
+      50.}}]}, 
+   {Hue[0.8292291395829955, 0.06643811343195483, 0.9335618865680452], 
+    PolygonBox[{{224.699038298841, 36.45155706337732}, {220., 
+     36.269720135717776`}, {225., 28.194067673528124`}}]}, 
+   {Hue[0.6802494798061227, 0.09345839800141031, 0.9065416019985897], 
+    PolygonBox[{{185., 163.04257699824538`}, {180., 161.12236819385356`}, {
+     190., 160.4952968896452}}]}, 
+   {Hue[0.8255464392086355, 0.09315862802272734, 0.9068413719772727], 
+    PolygonBox[{{65., 0.}, {60., 23.44038918284467}, {60., 0.}}]}, 
+   {Hue[0.7333582338502044, 0.01380698977738215, 0.9861930102226178], 
+    PolygonBox[{{130., 180.}, {125., 170.35779509368774`}, {130., 
+     168.31921463515886`}}]}, 
+   {Hue[0.6328135774305587, 0.01695974898952224, 0.9830402510104778], 
+    PolygonBox[{{179.66546206475402`, 176.37164304253446`}, {185., 
+     163.04257699824538`}, {188.60447980723612`, 165.}}]}, 
+   {Hue[0.7660559688996048, 0.0872092268111141, 0.9127907731888859], 
+    PolygonBox[{{80., 168.29522323173276`}, {70., 152.41194085848122`}, {90., 
+     149.19073615544283`}}]}, 
+   {Hue[0.676600894194044, 0.08718894514344333, 0.9128110548565567], 
+    PolygonBox[{{95., 167.7638806855681}, {105., 159.2834524309274}, {100., 
+     175.30553941569303`}}]}, 
+   {Hue[0.6674634015628707, 0.10567129535308994`, 0.89432870464691], 
+    PolygonBox[{{236.53769584255645`, 29.159084278810923`}, {224.699038298841,
+      36.45155706337732}, {225., 28.194067673528124`}}]}, 
+   {Hue[0.8154806454697956, 0.10916375206784068`, 0.8908362479321593], 
+    PolygonBox[{{115., 180.}, {110., 180.}, {115., 178.19175884392325`}}]}, 
+   {Hue[0.7543046220927806, 0.09913446185078834, 0.9008655381492117], 
+    PolygonBox[{{110., 175.47729144494096`}, {118.92401162373363`, 
+     164.85343007062022`}, {115., 178.19175884392325`}}]}, 
+   {Hue[0.8077220965655343, 0.09842275767029174, 0.9015772423297083], 
+    PolygonBox[{{210., 1.7636849561535541`}, {211.35866168700016`, 20.}, {
+     205., 0.}}]}, 
+   {Hue[0.6487537739565135, 0.02699542698695534, 0.9730045730130447], 
+    PolygonBox[{{125., 180.}, {125., 170.35779509368774`}, {130., 180.}}]}, 
+   {Hue[0.6788259502151822, 0.07480989861005283, 0.9251901013899472], 
+    PolygonBox[{{130., 180.}, {130., 168.31921463515886`}, {135., 180.}}]}, 
+   {Hue[0.6238265647181965, 0.021780828686543074`, 0.9782191713134569], 
+    PolygonBox[{{156.91093745682974`, 177.42836358276065`}, {
+     156.04530732391015`, 175.9963320811255}, {166.28399741198575`, 
+     174.21898821436446`}}]}, 
+   {Hue[0.6813288184924864, 0.04520570711634808, 0.9547942928836519], 
+    PolygonBox[{{156.04530732391015`, 175.9963320811255}, {
+     153.07454660755104`, 164.6245026537913}, {166.28399741198575`, 
+     174.21898821436446`}}]}, 
+   {Hue[0.712768263797637, 0.0965882351269628, 0.9034117648730372], 
+    PolygonBox[{{185., 163.04257699824538`}, {190., 160.4952968896452}, {
+     188.60447980723612`, 165.}}]}, 
+   {Hue[0.6438065633889264, 0.04552758287015202, 0.954472417129848], 
+    PolygonBox[{{92.86188308782351, 171.8252758949298}, {95., 
+     167.7638806855681}, {100., 175.30553941569303`}}]}, 
+   {Hue[0.61236785632889, 0.03331173958671918, 0.9666882604132808], 
+    PolygonBox[{{120., 180.}, {125., 170.35779509368774`}, {125., 180.}}]}, 
+   {Hue[0.7039437730587337, 0.10228251560623569`, 0.8977174843937643], 
+    PolygonBox[{{135., 180.}, {140., 165.22698879010753`}, {140., 180.}}]}, 
+   {Hue[0.6067873983327543, 0.048803393092821556`, 0.9511966069071784], 
+    PolygonBox[{{155., 180.}, {156.04530732391015`, 175.9963320811255}, {
+     156.91093745682974`, 177.42836358276065`}}]}, 
+   {Hue[0.6491182600057391, 0.07568200153803872, 0.9243179984619613], 
+    PolygonBox[{{206.94054198463226`, 145.}, {215., 135.90282312287218`}, {
+     210., 145.73311812405672`}}]}, 
+   {Hue[0.6346260306965341, 0.05358728079749464, 0.9464127192025054], 
+    PolygonBox[{{205., 164.75020912621073`}, {206.94054198463226`, 145.}, {
+     210., 145.73311812405672`}}]}, 
+   {Hue[0.6450870206870996, 0.09389964049349597, 0.906100359506504], 
+    PolygonBox[{{115., 180.}, {115., 178.19175884392325`}, {120., 180.}}]}, 
+   {Hue[0.6324697169260085, 0.013276566685334945`, 0.986723433314665], 
+    PolygonBox[{{115., 178.19175884392325`}, {125., 170.35779509368774`}, {
+     120., 180.}}]}, 
+   {Hue[0.652879903972975, 0.08190594844891663, 0.9180940515510834], 
+    PolygonBox[{{140., 180.}, {145., 168.639263762724}, {145., 180.}}]}, 
+   {Hue[0.7944545710903618, 0.01822325659908197, 0.981776743400918], 
+    PolygonBox[{{222.25806991339002`, 15.}, {211.35866168700016`, 20.}, {
+     215.66896114341927`, 10.}}]}, 
+   {Hue[0.64878832243424, 0.04416990449142211, 0.9558300955085779], 
+    PolygonBox[{{220.57221624638592`, 140.}, {215., 135.90282312287218`}, {
+     225.410007777424, 125.}}]}, 
+   {Hue[0.7381681527795254, 0.06441683434635914, 0.9355831656536409], 
+    PolygonBox[{{215., 135.90282312287218`}, {211.7343895629776, 130.}, {
+     225.410007777424, 125.}}]}, 
+   {Hue[0.6231722023817932, 0.04317442654847847, 0.9568255734515215], 
+    PolygonBox[{{110., 180.}, {110., 175.47729144494096`}, {115., 
+     178.19175884392325`}}]}, 
+   {Hue[0.6155869635244979, 0.03443051425649635, 0.9655694857435037], 
+    PolygonBox[{{28.328817986329682`, 75.14834154758057}, {38.95293040669908, 
+     85.}, {26.234229756813008`, 90.}}]}, 
+   {Hue[0.7933204033510617, 0.10963668731421805`, 0.890363312685782], 
+    PolygonBox[{{34.540308154630225`, 91.61623107223511}, {
+     49.878484231356055`, 100.}, {21.101192479584313`, 115.}}]}, 
+   {Hue[0.6699057812911944, 0.03240084805299259, 0.9675991519470074], 
+    PolygonBox[{{179.66546206475402`, 176.37164304253446`}, {
+     178.2737153335674, 164.25718649757408`}, {185., 163.04257699824538`}}]}, 
+   {Hue[0.6318100489533971, 0.016142989372924688`, 0.9838570106270753], 
+    PolygonBox[{{190., 160.4952968896452}, {206.94054198463226`, 145.}, {195.,
+      161.81758127885695`}}]}, 
+   {Hue[0.6925959731743893, 0.02384556164877727, 0.9761544383512227], 
+    PolygonBox[{{156.91093745682974`, 177.42836358276065`}, {
+     166.28399741198575`, 174.21898821436446`}, {160., 180.}}]}, 
+   {Hue[0.8244903573346328, 0.05168992171386866, 0.9483100782861313], 
+    PolygonBox[{{145., 180.}, {145., 168.639263762724}, {150., 180.}}]}, 
+   {Hue[0.6206143489078696, 0.06891832094253592, 0.9310816790574641], 
+    PolygonBox[{{60., 0.}, {60., 23.44038918284467}, {50., 
+     6.286289443757198}}]}, 
+   {Hue[0.7816113002957549, 0.07873369204703307, 0.9212663079529669], 
+    PolygonBox[{{45., 27.634305709036795`}, {52.90543232990362, 55.}, {
+     28.744143190454736`, 44.14128625656295}}]}, 
+   {Hue[0.6636822855694313, 0.09671581958008968, 0.9032841804199103], 
+    PolygonBox[{{100., 180.}, {100., 175.30553941569303`}, {105., 180.}}]}, 
+   {Hue[0.7351826450639112, 0.10798398756691363`, 0.8920160124330864], 
+    PolygonBox[{{65., 164.35795968375072`}, {70., 152.41194085848122`}, {80., 
+     168.29522323173276`}}]}, 
+   {Hue[0.7387476550445214, 0.05815879053512796, 0.941841209464872], 
+    PolygonBox[{{60., 0.}, {50., 6.286289443757198}, {55., 0.}}]}, 
+   {Hue[0.741791444870979, 0.062450038829789056`, 0.9375499611702109], 
+    PolygonBox[{{215.66896114341927`, 10.}, {211.35866168700016`, 20.}, {210.,
+      1.7636849561535541`}}]}, 
+   {Hue[0.6530424572318111, 0.08082803168130315, 0.9191719683186969], 
+    PolygonBox[{{105., 180.}, {110., 175.47729144494096`}, {110., 180.}}]}, 
+   {Hue[0.6353953578055497, 0.01021350526328646, 0.9897864947367135], 
+    PolygonBox[{{105., 180.}, {100., 175.30553941569303`}, {110., 
+     175.47729144494096`}}]}, 
+   {Hue[0.7342511073983287, 0.04229276998952891, 0.9577072300104711], 
+    PolygonBox[{{210., 1.7636849561535541`}, {205., 0.}, {208.40528421166863`,
+      0.}}]}, 
+   {Hue[0.6960863483134543, 0.02048804423849826, 0.9795119557615017], 
+    PolygonBox[{{35., 27.608714753280566`}, {45., 27.634305709036795`}, {
+     28.744143190454736`, 44.14128625656295}}]}, 
+   {Hue[0.62068260658328, 0.02071804854730097, 0.979281951452699], 
+    PolygonBox[{{32.45967504746217, 60.}, {28.328817986329682`, 
+     75.14834154758057}, {23.02097999215198, 75.}}]}, 
+   {Hue[0.825799076541216, 0.043229065508284426`, 0.9567709344917156], 
+    PolygonBox[{{28.328817986329682`, 75.14834154758057}, {
+     26.234229756813008`, 90.}, {24.143115491401716`, 89.74919542575418}}]}, 
+   {Hue[0.7032600101880556, 0.03740995168200145, 0.9625900483179985], 
+    PolygonBox[{{188.60447980723612`, 165.}, {190., 160.4952968896452}, {195.,
+      161.81758127885695`}}]}, 
+   {Hue[0.63830726694662, 0.054110407540139405`, 0.9458895924598606], 
+    PolygonBox[{{34.22215813193657, 25.805917533048927`}, {45., 
+     27.634305709036795`}, {35., 27.608714753280566`}}]}, 
+   {Hue[0.6712155563090699, 0.02519535805715889, 0.9748046419428411], 
+    PolygonBox[{{150., 180.}, {156.04530732391015`, 175.9963320811255}, {155.,
+      180.}}]}, 
+   {Hue[0.7723609539618599, 0.06810914318397876, 0.9318908568160212], 
+    PolygonBox[{{166.28399741198575`, 174.21898821436446`}, {175., 
+     163.52457989864448`}, {179.66546206475402`, 176.37164304253446`}}]}, 
+   {Hue[0.7931631969274708, 0.07838369966396941, 0.9216163003360306], 
+    PolygonBox[{{100., 180.}, {95., 180.}, {100., 175.30553941569303`}}]}, 
+   {Hue[0.6160005454823861, 0.017218310409297444`, 0.9827816895907026], 
+    PolygonBox[{{229.24725942438226`, 75.}, {240., 85.}, {219.02138863863138`,
+      90.}}]}, 
+   {Hue[0.652683026388559, 0.07433109985189701, 0.925668900148103], 
+    PolygonBox[{{240., 80.}, {229.24725942438226`, 75.}, {240., 75.}}]}, 
+   {Hue[0.8052523146110145, 0.05775382360449155, 0.9422461763955085], 
+    PolygonBox[{{215., 0.}, {210., 1.7636849561535541`}, {210., 0.}}]}, 
+   {Hue[0.7245138734121983, 0.0934235359281389, 0.9065764640718611], 
+    PolygonBox[{{210., 1.7636849561535541`}, {208.40528421166863`, 0.}, {210.,
+      0.}}]}, 
+   {Hue[0.8115961956200803, 0.09554520696102853, 0.9044547930389715], 
+    PolygonBox[{{23.02097999215198, 75.}, {28.328817986329682`, 
+     75.14834154758057}, {24.143115491401716`, 89.74919542575418}}]}, 
+   {Hue[0.8084487675529548, 0.017008684638759708`, 0.9829913153612403], 
+    PolygonBox[{{26.234229756813008`, 90.}, {34.540308154630225`, 
+     91.61623107223511}, {23.398969482988832`, 96.28812094459892}}]}, 
+   {Hue[0.8262011336704103, 0.02122454668021967, 0.9787754533197803], 
+    PolygonBox[{{240., 75.}, {229.24725942438226`, 75.}, {240., 70.}}]}, 
+   {Hue[0.7109204498593913, 0.03719005014198151, 0.9628099498580185], 
+    PolygonBox[{{230., 19.632063000216533`}, {225., 28.194067673528124`}, {
+     222.25806991339002`, 15.}}]}, 
+   {Hue[0.6350436466555724, 0.048157407932693075`, 0.9518425920673069], 
+    PolygonBox[{{240., 85.}, {240., 90.}, {219.02138863863138`, 90.}}]}, 
+   {Hue[0.7275227748210364, 0.09912737132336646, 0.9008726286766335], 
+    PolygonBox[{{24.54732211505342, 38.37568672094855}, {28.744143190454736`, 
+     44.14128625656295}, {27.304833340328585`, 45.}}]}, 
+   {Hue[0.6739464874016922, 0.07054446111477031, 0.9294555388852297], 
+    PolygonBox[{{28.744143190454736`, 44.14128625656295}, {32.45967504746217, 
+     60.}, {27.304833340328585`, 45.}}]}, 
+   {Hue[0.809234377581149, 0.0397229276584965, 0.9602770723415035], 
+    PolygonBox[{{7.352625232678264, 65.27809626948005}, {32.45967504746217, 
+     60.}, {23.02097999215198, 75.}}]}, 
+   {Hue[0.7221853230186832, 0.09879864853244935, 0.9012013514675506], 
+    PolygonBox[{{225., 28.194067673528124`}, {211.35866168700016`, 20.}, {
+     222.25806991339002`, 15.}}]}, 
+   {Hue[0.6775292445939971, 0.0753589758438683, 0.9246410241561317], 
+    PolygonBox[{{215.66896114341927`, 10.}, {210., 1.7636849561535541`}, {
+     215.49263167549765`, 5.}}]}, 
+   {Hue[0.6433277123807202, 0.010745111370055294`, 0.9892548886299447], 
+    PolygonBox[{{235., 40.03301539629197}, {230.46936909048924`, 
+     44.21453541445382}, {224.699038298841, 36.45155706337732}}]}, 
+   {Hue[0.6706598387275142, 0.09072276160281079, 0.9092772383971892], 
+    PolygonBox[{{155., 180.}, {156.91093745682974`, 177.42836358276065`}, {
+     160., 180.}}]}, 
+   {Hue[0.6365401110933986, 0.025190111216024658`, 0.9748098887839753], 
+    PolygonBox[{{204.28863337138478`, 170.}, {195., 161.81758127885695`}, {
+     205., 164.75020912621073`}}]}, 
+   {Hue[0.6584446360432107, 0.06828121576957036, 0.9317187842304296], 
+    PolygonBox[{{240., 70.}, {229.11484455202486`, 70.}, {240., 65.}}]}, 
+   {Hue[0.6530442827219556, 0.08223348113330076, 0.9177665188666992], 
+    PolygonBox[{{240., 90.}, {231.14355425888493`, 100.2818064335512}, {
+     219.02138863863138`, 90.}}]}, 
+   {Hue[0.8110613085554755, 0.04253144186063107, 0.9574685581393689], 
+    PolygonBox[{{35., 27.608714753280566`}, {28.744143190454736`, 
+     44.14128625656295}, {24.54732211505342, 38.37568672094855}}]}, 
+   {Hue[0.832354924470501, 0.05923726105257421, 0.9407627389474258], 
+    PolygonBox[{{40., 13.018266211929564`}, {45., 27.634305709036795`}, {
+     34.22215813193657, 25.805917533048927`}}]}, 
+   {Hue[0.836862072841811, 0.011722113614527685`, 0.9882778863854723], 
+    PolygonBox[{{40., 13.018266211929564`}, {50., 6.286289443757198}, {60., 
+     23.44038918284467}}]}, 
+   {Hue[0.7132593969546803, 0.0779838083643597, 0.9220161916356403], 
+    PolygonBox[{{240., 45.}, {230.46936909048924`, 44.21453541445382}, {235., 
+     40.03301539629197}}]}, 
+   {Hue[0.6102011562087589, 0.05937022214114318, 0.9406297778588568], 
+    PolygonBox[{{225., 0.}, {215.66896114341927`, 10.}, {215.49263167549765`, 
+     5.}}]}, 
+   {Hue[0.8127622392090877, 0.0777728309834207, 0.9222271690165793], 
+    PolygonBox[{{240., 65.}, {229.11484455202486`, 70.}, {240., 60.}}]}, 
+   {Hue[0.7707973034301752, 0.06544586403997488, 0.9345541359600251], 
+    PolygonBox[{{240., 95.}, {231.14355425888493`, 100.2818064335512}, {240., 
+     90.}}]}, 
+   {Hue[0.741519895841783, 0.08700277698366599, 0.912997223016334], 
+    PolygonBox[{{95., 180.}, {92.86188308782351, 171.8252758949298}, {100., 
+     175.30553941569303`}}]}, 
+   {Hue[0.7137871740249533, 0.0786455113224862, 0.9213544886775138], 
+    PolygonBox[{{210., 145.73311812405672`}, {215., 135.90282312287218`}, {
+     220.57221624638592`, 140.}}]}, 
+   {Hue[0.8325507329753465, 0.05756774372025586, 0.9424322562797441], 
+    PolygonBox[{{240., 100.}, {231.14355425888493`, 100.2818064335512}, {240.,
+      95.}}]}, 
+   {Hue[0.8054617776183821, 0.06905554271605652, 0.9309444572839435], 
+    PolygonBox[{{220., 156.28025923171248`}, {210., 145.73311812405672`}, {
+     220.57221624638592`, 140.}}]}, 
+   {Hue[0.7658778481442903, 0.046128499458143346`, 0.9538715005418567], 
+    PolygonBox[{{240., 60.}, {221.65204228683388`, 60.}, {240., 55.}}]}, 
+   {Hue[0.6074603359270558, 0.10061808720120369`, 0.8993819127987963], 
+    PolygonBox[{{160., 180.}, {166.28399741198575`, 174.21898821436446`}, {
+     165., 180.}}]}, 
+   {Hue[0.8029172030057563, 0.03344810355504757, 0.9665518964449524], 
+    PolygonBox[{{231.14355425888493`, 100.2818064335512}, {
+     238.37201267983664`, 102.90998919638184`}, {240., 110.}}]}, 
+   {Hue[0.6749030180484572, 0.05363092190151564, 0.9463690780984844], 
+    PolygonBox[{{17.10976344787821, 95.}, {24.143115491401716`, 
+     89.74919542575418}, {23.398969482988832`, 96.28812094459892}}]}, 
+   {Hue[0.6879430482673236, 0.06781379429968604, 0.932186205700314], 
+    PolygonBox[{{24.143115491401716`, 89.74919542575418}, {
+     26.234229756813008`, 90.}, {23.398969482988832`, 96.28812094459892}}]}, 
+   {Hue[0.6394879955076069, 0.022704242865667967`, 0.977295757134332], 
+    PolygonBox[{{231.14355425888493`, 100.2818064335512}, {240., 110.}, {
+     222.76152249515218`, 117.95419630526783`}}]}, 
+   {Hue[0.6671982786464231, 0.09629666293807204, 0.903703337061928], 
+    PolygonBox[{{41.7093142650981, 9.086124334125572}, {50., 
+     6.286289443757198}, {40., 13.018266211929564`}}]}, 
+   {Hue[0.8338252619121168, 0.04677779295755291, 0.9532222070424471], 
+    PolygonBox[{{55., 0.}, {50., 6.286289443757198}, {50., 0.}}]}, 
+   {Hue[0.6473489934513166, 0.06318115057066431, 0.9368188494293357], 
+    PolygonBox[{{240., 55.}, {230.46936909048924`, 44.21453541445382}, {240., 
+     50.}}]}, 
+   {Hue[0.8034554936049448, 0.04344229821875778, 0.9565577017812422], 
+    PolygonBox[{{90., 180.}, {92.86188308782351, 171.8252758949298}, {95., 
+     180.}}]}, 
+   {Hue[0.6341778525094566, 0.07312878609144335, 0.9268712139085566], 
+    PolygonBox[{{240., 105.}, {238.37201267983664`, 102.90998919638184`}, {
+     240., 100.}}]}, 
+   {Hue[0.7704314024849459, 0.06649801351805495, 0.933501986481945], 
+    PolygonBox[{{238.37201267983664`, 102.90998919638184`}, {
+     231.14355425888493`, 100.2818064335512}, {240., 100.}}]}, 
+   {Hue[0.8261915130577295, 0.0681935664499369, 0.9318064335500631], 
+    PolygonBox[{{41.672537649344406`, 5.}, {50., 6.286289443757198}, {
+     41.7093142650981, 9.086124334125572}}]}, 
+   {Hue[0.8393479642192013, 0.01201486796244211, 0.9879851320375579], 
+    PolygonBox[{{27.65134789572238, 28.239446663117917`}, {34.22215813193657, 
+     25.805917533048927`}, {35., 27.608714753280566`}}]}, 
+   {Hue[0.6373903586047995, 0.06263411585420176, 0.9373658841457982], 
+    PolygonBox[{{60., 148.6699889685378}, {70., 152.41194085848122`}, {65., 
+     164.35795968375072`}}]}, 
+   {Hue[0.7829283507144472, 0.05169608229257405, 0.948303917707426], 
+    PolygonBox[{{85., 180.}, {92.86188308782351, 171.8252758949298}, {90., 
+     180.}}]}, 
+   {Hue[0.7149739113339038, 0.0411356368539284, 0.9588643631460716], 
+    PolygonBox[{{55.81260187291622, 165.7666209798253}, {60., 
+     148.6699889685378}, {65., 164.35795968375072`}}]}, 
+   {Hue[0.8063883201577524, 0.10814108377242304`, 0.891858916227577], 
+    PolygonBox[{{165., 180.}, {166.28399741198575`, 174.21898821436446`}, {
+     170., 180.}}]}, 
+   {Hue[0.6543233422526556, 0.0821271346068091, 0.9178728653931909], 
+    PolygonBox[{{220., 0.}, {225., 0.}, {215.49263167549765`, 5.}}]}, 
+   {Hue[0.6093861550038218, 0.07457101591356774, 0.9254289840864323], 
+    PolygonBox[{{220., 0.}, {215.49263167549765`, 5.}, {215., 0.}}]}, 
+   {Hue[0.797924830685981, 0.07899316280447899, 0.921006837195521], 
+    PolygonBox[{{215.49263167549765`, 5.}, {210., 1.7636849561535541`}, {215.,
+      0.}}]}, 
+   {Hue[0.698981203671317, 0.08277492286359356, 0.9172250771364064], 
+    PolygonBox[{{230., 19.632063000216533`}, {236.53769584255645`, 
+     29.159084278810923`}, {225., 28.194067673528124`}}]}, 
+   {Hue[0.6605272604101916, 0.030447472321792457`, 0.9695525276782075], 
+    PolygonBox[{{175., 180.}, {166.28399741198575`, 174.21898821436446`}, {
+     179.66546206475402`, 176.37164304253446`}}]}, 
+   {Hue[0.6374251677615108, 0.051085569394414776`, 0.9489144306055852], 
+    PolygonBox[{{195., 161.81758127885695`}, {206.94054198463226`, 145.}, {
+     205., 164.75020912621073`}}]}, 
+   {Hue[0.637453130676981, 0.08652964713764821, 0.9134703528623518], 
+    PolygonBox[{{240., 50.}, {230.46936909048924`, 44.21453541445382}, {240., 
+     45.}}]}, 
+   {Hue[0.6977779293148044, 0.018479126990545547`, 0.9815208730094545], 
+    PolygonBox[{{240., 110.}, {240., 115.}, {222.76152249515218`, 
+     117.95419630526783`}}]}, 
+   {Hue[0.6997774488803243, 0.026454742907227935`, 0.9735452570927721], 
+    PolygonBox[{{45., 148.59626594858048`}, {48.51168133817919, 
+     122.55444511087785`}, {60., 148.6699889685378}}]}, 
+   {Hue[0.8027264294641377, 0.03597739517323073, 0.9640226048267693], 
+    PolygonBox[{{236.53769584255645`, 29.159084278810923`}, {235., 
+     40.03301539629197}, {224.699038298841, 36.45155706337732}}]}, 
+   {Hue[0.787493590711758, 0.04661180296661882, 0.9533881970333812], 
+    PolygonBox[{{85., 180.}, {80., 168.29522323173276`}, {92.86188308782351, 
+     171.8252758949298}}]}, 
+   {Hue[0.6531035290672852, 0.10318436137146236`, 0.8968156386285376], 
+    PolygonBox[{{27.65134789572238, 28.239446663117917`}, {
+     25.199906517780278`, 24.498714195378938`}, {34.22215813193657, 
+     25.805917533048927`}}]}, 
+   {Hue[0.6271608596073832, 0.03445156936550231, 0.9655484306344977], 
+    PolygonBox[{{27.65134789572238, 28.239446663117917`}, {35., 
+     27.608714753280566`}, {24.54732211505342, 38.37568672094855}}]}, 
+   {Hue[0.8026233792015365, 0.05753213274137026, 0.9424678672586297], 
+    PolygonBox[{{14.213005900640326`, 80.58172872111663}, {7.352625232678264, 
+     65.27809626948005}, {17.2598814555503, 80.}}]}, 
+   {Hue[0.7372402641073047, 0.06075708587658979, 0.9392429141234102], 
+    PolygonBox[{{21.101192479584313`, 115.}, {48.51168133817919, 
+     122.55444511087785`}, {35.58466136460311, 135.}}]}, 
+   {Hue[0.6908720649688991, 0.058495749639711825`, 0.9415042503602882], 
+    PolygonBox[{{170., 180.}, {166.28399741198575`, 174.21898821436446`}, {
+     175., 180.}}]}, 
+   {Hue[0.8348942876897442, 0.026367305672180597`, 0.9736326943278194], 
+    PolygonBox[{{35.58466136460311, 135.}, {48.51168133817919, 
+     122.55444511087785`}, {45., 148.59626594858048`}}]}, 
+   {Hue[0.6294747936700914, 0.09085275930731695, 0.909147240692683], 
+    PolygonBox[{{75., 178.7604046120805}, {65., 164.35795968375072`}, {80., 
+     168.29522323173276`}}]}, 
+   {Hue[0.7402784471082621, 0.08537594181205221, 0.9146240581879478], 
+    PolygonBox[{{240., 45.}, {235., 40.03301539629197}, {240., 40.}}]}, 
+   {Hue[0.6931847955055245, 0.10622065413351522`, 0.8937793458664848], 
+    PolygonBox[{{240., 115.}, {240., 120.}, {222.76152249515218`, 
+     117.95419630526783`}}]}, 
+   {Hue[0.7975151752040903, 0.019127362887607968`, 0.980872637112392], 
+    PolygonBox[{{42.99631106927478, 2.0504679906001115`}, {50., 
+     6.286289443757198}, {41.672537649344406`, 5.}}]}, 
+   {Hue[0.6834905533348298, 0.06735005224634727, 0.9326499477536527], 
+    PolygonBox[{{41.7093142650981, 9.086124334125572}, {40., 
+     13.018266211929564`}, {30., 3.6574478021178365`}}]}, 
+   {Hue[0.630174702390834, 0.09835987297220572, 0.9016401270277943], 
+    PolygonBox[{{25.199906517780278`, 24.498714195378938`}, {25., 
+     19.316524539176342`}, {34.22215813193657, 25.805917533048927`}}]}, 
+   {Hue[0.7189434835869039, 0.0317647337848207, 0.9682352662151793], 
+    PolygonBox[{{23.02097999215198, 75.}, {24.143115491401716`, 
+     89.74919542575418}, {17.2598814555503, 80.}}]}, 
+   {Hue[0.7363330830938312, 0.0411424983087747, 0.9588575016912253], 
+    PolygonBox[{{23.398969482988832`, 96.28812094459892}, {
+     34.540308154630225`, 91.61623107223511}, {21.101192479584313`, 115.}}]}, 
+   {Hue[0.6719907327894079, 0.09305550013547448, 0.9069444998645255], 
+    PolygonBox[{{17.2598814555503, 80.}, {7.352625232678264, 
+     65.27809626948005}, {23.02097999215198, 75.}}]}, 
+   {Hue[0.6652067346386573, 0.048992584108022874`, 0.9510074158919771], 
+    PolygonBox[{{240., 35.}, {235., 40.03301539629197}, {236.53769584255645`, 
+     29.159084278810923`}}]}, 
+   {Hue[0.6134785358590028, 0.09733199831161421, 0.9026680016883858], 
+    PolygonBox[{{50., 0.}, {50., 6.286289443757198}, {45., 0.}}]}, 
+   {Hue[0.6738510558466234, 0.07402373147283048, 0.9259762685271695], 
+    PolygonBox[{{45., 0.}, {50., 6.286289443757198}, {42.99631106927478, 
+     2.0504679906001115`}}]}, 
+   {Hue[0.6383365979554882, 0.04007888645742075, 0.9599211135425793], 
+    PolygonBox[{{25., 19.316524539176342`}, {40., 13.018266211929564`}, {
+     34.22215813193657, 25.805917533048927`}}]}, 
+   {Hue[0.6268462463514148, 0.02607598625915819, 0.9739240137408418], 
+    PolygonBox[{{80., 180.}, {80., 168.29522323173276`}, {85., 180.}}]}, 
+   {Hue[0.7536797559688212, 0.07037151498971594, 0.9296284850102841], 
+    PolygonBox[{{240., 40.}, {235., 40.03301539629197}, {240., 35.}}]}, 
+   {Hue[0.8147243365934208, 0.05518512414027554, 0.9448148758597245], 
+    PolygonBox[{{240., 120.}, {225.410007777424, 125.}, {222.76152249515218`, 
+     117.95419630526783`}}]}, 
+   {Hue[0.6764059666905164, 0.04066890171751025, 0.9593310982824897], 
+    PolygonBox[{{175., 180.}, {179.66546206475402`, 176.37164304253446`}, {
+     180., 180.}}]}, 
+   {Hue[0.6746051409193817, 0.07786452317785064, 0.9221354768221494], 
+    PolygonBox[{{179.66546206475402`, 176.37164304253446`}, {
+     188.60447980723612`, 165.}, {189.72383784199496`, 
+     176.97909039557112`}}]}, 
+   {Hue[0.6955252217133737, 0.09966514378211766, 0.9003348562178823], 
+    PolygonBox[{{239.4346636638734, 25.}, {236.53769584255645`, 
+     29.159084278810923`}, {230., 19.632063000216533`}}]}, 
+   {Hue[0.788792418801391, 0.05194258081754677, 0.9480574191824532], 
+    PolygonBox[{{225., 0.}, {230., 0.}, {222.25806991339002`, 15.}}]}, 
+   {Hue[0.7126944930924104, 0.017079428819525178`, 0.9829205711804748], 
+    PolygonBox[{{225., 0.}, {222.25806991339002`, 15.}, {215.66896114341927`, 
+     10.}}]}, 
+   {Hue[0.7647625478734799, 0.10836400986521733`, 0.8916359901347827], 
+    PolygonBox[{{189.72383784199496`, 176.97909039557112`}, {
+     188.60447980723612`, 165.}, {195., 161.81758127885695`}}]}, 
+   {Hue[0.6090925910673327, 0.05104659259705746, 0.9489534074029425], 
+    PolygonBox[{{240., 125.}, {225.410007777424, 125.}, {240., 120.}}]}, 
+   {Hue[0.7935488822879583, 0.06894167584733601, 0.931058324152664], 
+    PolygonBox[{{12.430609743823652`, 81.60644978484015}, {
+     24.143115491401716`, 89.74919542575418}, {17.10976344787821, 95.}}]}, 
+   {Hue[0.678490226453298, 0.045507654351120364`, 0.9544923456488796], 
+    PolygonBox[{{55.81260187291622, 165.7666209798253}, {50., 
+     152.4670002436089}, {60., 148.6699889685378}}]}, 
+   {Hue[0.629929017416905, 0.04727109020417575, 0.9527289097958243], 
+    PolygonBox[{{75., 178.7604046120805}, {80., 168.29522323173276`}, {80., 
+     180.}}]}, 
+   {Hue[0.7396702607569947, 0.10077205063348338`, 0.8992279493665166], 
+    PolygonBox[{{240., 35.}, {236.53769584255645`, 29.159084278810923`}, {
+     240., 30.507300412149235`}}]}, 
+   {Hue[0.6064318034052036, 0.012576365800392342`, 0.9874236341996077], 
+    PolygonBox[{{240., 30.507300412149235`}, {236.53769584255645`, 
+     29.159084278810923`}, {240., 30.}}]}, 
+   {Hue[0.8389062850953398, 0.015682885912482347`, 0.9843171140875177], 
+    PolygonBox[{{240., 125.}, {240., 130.}, {225.410007777424, 125.}}]}, 
+   {Hue[0.8302719397199758, 0.07128763132987748, 0.9287123686701225], 
+    PolygonBox[{{185., 180.}, {179.66546206475402`, 176.37164304253446`}, {
+     189.72383784199496`, 176.97909039557112`}}]}, 
+   {Hue[0.6292455221039887, 0.0994943147536338, 0.9005056852463662], 
+    PolygonBox[{{35.58466136460311, 135.}, {45., 148.59626594858048`}, {40., 
+     148.4834080146355}}]}, 
+   {Hue[0.7049978603711924, 0.08163167696329354, 0.9183683230367065], 
+    PolygonBox[{{45., 148.59626594858048`}, {50., 152.4670002436089}, {
+     42.11046086861592, 155.}}]}, 
+   {Hue[0.7497461772316446, 0.08319883920098492, 0.9168011607990151], 
+    PolygonBox[{{30., 144.97631355245784`}, {35.58466136460311, 135.}, {40., 
+     148.4834080146355}}]}, 
+   {Hue[0.7768172308001321, 0.014295465272918029`, 0.985704534727082], 
+    PolygonBox[{{17.2598814555503, 80.}, {24.143115491401716`, 
+     89.74919542575418}, {14.213005900640326`, 80.58172872111663}}]}, 
+   {Hue[0.6170440468693227, 0.028546413644537028`, 0.971453586355463], 
+    PolygonBox[{{12.430609743823652`, 81.60644978484015}, {1.704016628676392, 
+     70.}, {14.213005900640326`, 80.58172872111663}}]}, 
+   {Hue[0.6331043615675754, 0.0425645843020257, 0.9574354156979743], 
+    PolygonBox[{{35.58466136460311, 135.}, {15.076808754332802`, 
+     131.21296046755214`}, {21.101192479584313`, 115.}}]}, 
+   {Hue[0.7115088822216376, 0.09634966340872386, 0.9036503365912761], 
+    PolygonBox[{{17.10976344787821, 95.}, {23.398969482988832`, 
+     96.28812094459892}, {21.101192479584313`, 115.}}]}, 
+   {Hue[0.7481864008393442, 0.02391136848141362, 0.9760886315185864], 
+    PolygonBox[{{27.65134789572238, 28.239446663117917`}, {24.54732211505342, 
+     38.37568672094855}, {16.63533227214208, 29.763442486247783`}}]}, 
+   {Hue[0.6926848779481031, 0.09338507172866362, 0.9066149282713364], 
+    PolygonBox[{{9.979271139795614, 50.}, {27.304833340328585`, 45.}, {
+     32.45967504746217, 60.}}]}, 
+   {Hue[0.6548239521715101, 0.04337956544346866, 0.9566204345565313], 
+    PolygonBox[{{30., 3.6574478021178365`}, {41.672537649344406`, 5.}, {
+     41.7093142650981, 9.086124334125572}}]}, 
+   {Hue[0.6400745213955261, 0.08407835639357208, 0.9159216436064279], 
+    PolygonBox[{{180., 180.}, {179.66546206475402`, 176.37164304253446`}, {
+     185., 180.}}]}, 
+   {Hue[0.6672932013812461, 0.05102945375909984, 0.9489705462409002], 
+    PolygonBox[{{70., 180.}, {65., 164.35795968375072`}, {75., 
+     178.7604046120805}}]}, 
+   {Hue[0.8268860965583508, 0.07819395640646798, 0.921806043593532], 
+    PolygonBox[{{44.08505135707999, 165.}, {50., 152.4670002436089}, {
+     55.81260187291622, 165.7666209798253}}]}, 
+   {Hue[0.6981486893913177, 0.09267744304917169, 0.9073225569508283], 
+    PolygonBox[{{45., 0.}, {42.99631106927478, 2.0504679906001115`}, {40., 
+     0.}}]}, 
+   {Hue[0.7615968134328712, 0.09773121100804649, 0.9022687889919535], 
+    PolygonBox[{{42.99631106927478, 2.0504679906001115`}, {
+     41.672537649344406`, 5.}, {40., 0.}}]}, 
+   {Hue[0.7323947435148079, 0.0274032162812744, 0.9725967837187256], 
+    PolygonBox[{{240., 30.}, {236.53769584255645`, 29.159084278810923`}, {
+     239.4346636638734, 25.}}]}, 
+   {Hue[0.8257951605557479, 0.04546716414599772, 0.9545328358540023], 
+    PolygonBox[{{70., 180.}, {75., 178.7604046120805}, {75., 180.}}]}, 
+   {Hue[0.7487664939900336, 0.010159921178919173`, 0.9898400788210808], 
+    PolygonBox[{{75., 178.7604046120805}, {80., 180.}, {75., 180.}}]}, 
+   {Hue[0.6948041205428778, 0.02130704199663369, 0.9786929580033663], 
+    PolygonBox[{{240., 30.}, {239.4346636638734, 25.}, {240., 25.}}]}, 
+   {Hue[0.6947350239467084, 0.09527165309261032, 0.9047283469073897], 
+    PolygonBox[{{239.4346636638734, 25.}, {230., 19.632063000216533`}, {240., 
+     20.}}]}, 
+   {Hue[0.6767358248956991, 0.0553035006454784, 0.9446964993545216], 
+    PolygonBox[{{12.802270507693208`, 40.}, {24.54732211505342, 
+     38.37568672094855}, {27.304833340328585`, 45.}}]}, 
+   {Hue[0.7325578435482251, 0.07804922807220072, 0.9219507719277993], 
+    PolygonBox[{{14.213005900640326`, 80.58172872111663}, {
+     24.143115491401716`, 89.74919542575418}, {12.430609743823652`, 
+     81.60644978484015}}]}, 
+   {Hue[0.6956057823681833, 0.08208496138240295, 0.917915038617597], 
+    PolygonBox[{{232.16076294052004`, 141.30331113319824`}, {
+     220.57221624638592`, 140.}, {225.410007777424, 125.}}]}, 
+   {Hue[0.6951619595901968, 0.10866565560130215`, 0.8913343443986979], 
+    PolygonBox[{{202.65994731745195`, 175.}, {195., 161.81758127885695`}, {
+     204.28863337138478`, 170.}}]}, 
+   {Hue[0.6471041417674607, 0.03378580922703145, 0.9662141907729686], 
+    PolygonBox[{{205., 164.75020912621073`}, {210., 145.73311812405672`}, {
+     220., 156.28025923171248`}}]}, 
+   {Hue[0.6278829072639135, 0.053175306168585124`, 0.9468246938314149], 
+    PolygonBox[{{202.65994731745195`, 175.}, {189.72383784199496`, 
+     176.97909039557112`}, {195., 161.81758127885695`}}]}, 
+   {Hue[0.7817108721718795, 0.047736111085957655`, 0.9522638889140423], 
+    PolygonBox[{{230., 0.}, {240., 10.}, {222.25806991339002`, 15.}}]}, 
+   {Hue[0.7702918174624308, 0.039970773866248366`, 0.9600292261337516], 
+    PolygonBox[{{40., 148.4834080146355}, {45., 148.59626594858048`}, {
+     42.11046086861592, 155.}}]}, 
+   {Hue[0.6292506308234518, 0.06267059254020213, 0.9373294074597979], 
+    PolygonBox[{{42.25073501532148, 160.}, {35., 162.51089592243733`}, {
+     42.11046086861592, 155.}}]}, 
+   {Hue[0.828716800884013, 0.065977036921685, 0.934022963078315], 
+    PolygonBox[{{225., 174.21489302622632`}, {205., 164.75020912621073`}, {
+     220., 156.28025923171248`}}]}, 
+   {Hue[0.6662563280803813, 0.017283469223381864`, 0.9827165307766181], 
+    PolygonBox[{{185., 180.}, {189.72383784199496`, 176.97909039557112`}, {
+     190., 180.}}]}, 
+   {Hue[0.6236553636797937, 0.07471059663068713, 0.9252894033693129], 
+    PolygonBox[{{30., 3.6574478021178365`}, {40., 13.018266211929564`}, {25., 
+     19.316524539176342`}}]}, 
+   {Hue[0.776381135939894, 0.014490402701472838`, 0.9855095972985272], 
+    PolygonBox[{{25.199906517780278`, 24.498714195378938`}, {
+     27.65134789572238, 28.239446663117917`}, {16.63533227214208, 
+     29.763442486247783`}}]}, 
+   {Hue[0.7853986231268124, 0.011538120983643596`, 0.9884618790163564], 
+    PolygonBox[{{227.5192995293452, 155.}, {220.57221624638592`, 140.}, {
+     232.16076294052004`, 141.30331113319824`}}]}, 
+   {Hue[0.6221293973661278, 0.06502300905413083, 0.9349769909458692], 
+    PolygonBox[{{240., 25.}, {239.4346636638734, 25.}, {240., 20.}}]}, 
+   {Hue[0.7975959053987359, 0.03448593919271681, 0.9655140608072832], 
+    PolygonBox[{{232.16076294052004`, 141.30331113319824`}, {225.410007777424,
+      125.}, {240., 130.}}]}, 
+   {Hue[0.775568801825621, 0.0397807322351823, 0.9602192677648177], 
+    PolygonBox[{{65., 180.}, {65., 164.35795968375072`}, {70., 180.}}]}, 
+   {Hue[0.6776447490768897, 0.02196807882540408, 0.9780319211745959], 
+    PolygonBox[{{55., 171.49546845278292`}, {55.81260187291622, 
+     165.7666209798253}, {65., 164.35795968375072`}}]}, 
+   {Hue[0.685842235650405, 0.09226841592004953, 0.9077315840799505], 
+    PolygonBox[{{40., 0.}, {41.672537649344406`, 5.}, {35., 0.}}]}, 
+   {Hue[0.665649232670225, 0.04201659273750624, 0.9579834072624938], 
+    PolygonBox[{{225., 174.21489302622632`}, {220., 156.28025923171248`}, {
+     229.23956889395612`, 160.}}]}, 
+   {Hue[0.7863896428979504, 0.05044692183626742, 0.9495530781637326], 
+    PolygonBox[{{190., 180.}, {189.72383784199496`, 176.97909039557112`}, {
+     195., 180.}}]}, 
+   {Hue[0.7746109690516807, 0.025038819539481727`, 0.9749611804605183], 
+    PolygonBox[{{195., 180.}, {189.72383784199496`, 176.97909039557112`}, {
+     202.65994731745195`, 175.}}]}, 
+   {Hue[0.8313650055005202, 0.06594581814843381, 0.9340541818515662], 
+    PolygonBox[{{235.48197384252634`, 150.}, {232.16076294052004`, 
+     141.30331113319824`}, {235., 141.53087209812537`}}]}, 
+   {Hue[0.8040230660114331, 0.045807689689625564`, 0.9541923103103744], 
+    PolygonBox[{{232.16076294052004`, 141.30331113319824`}, {240., 130.}, {
+     240., 135.}}]}, 
+   {Hue[0.7089956729123232, 0.05273829820681142, 0.9472617017931886], 
+    PolygonBox[{{227.5192995293452, 155.}, {220., 156.28025923171248`}, {
+     220.57221624638592`, 140.}}]}, 
+   {Hue[0.6334044161159862, 0.0541162709706946, 0.9458837290293054], 
+    PolygonBox[{{44.08505135707999, 165.}, {55.81260187291622, 
+     165.7666209798253}, {55., 171.49546845278292`}}]}, 
+   {Hue[0.7350052080716646, 0.05948814077147968, 0.9405118592285203], 
+    PolygonBox[{{27.302800922083307`, 150.}, {40., 148.4834080146355}, {
+     42.11046086861592, 155.}}]}, 
+   {Hue[0.6958146324044284, 0.1049884248995463, 0.8950115751004537], 
+    PolygonBox[{{42.11046086861592, 155.}, {50., 152.4670002436089}, {
+     42.25073501532148, 160.}}]}, 
+   {Hue[0.6609574768392733, 0.08075723666158918, 0.9192427633384108], 
+    PolygonBox[{{25.38287581623473, 139.1801082793375}, {35.58466136460311, 
+     135.}, {30., 144.97631355245784`}}]}, 
+   {Hue[0.6053997046997573, 0.07960153669292636, 0.9203984633070736], 
+    PolygonBox[{{16.081246153669568`, 30.}, {11.471704690765009`, 25.}, {
+     16.63533227214208, 29.763442486247783`}}]}, 
+   {Hue[0.7905265229812085, 0.0601703399766792, 0.9398296600233208], 
+    PolygonBox[{{19.04819673666431, 20.}, {25.199906517780278`, 
+     24.498714195378938`}, {16.63533227214208, 29.763442486247783`}}]}, 
+   {Hue[0.7631983246328936, 0.09168830761659519, 0.9083116923834048], 
+    PolygonBox[{{240., 10.}, {230., 19.632063000216533`}, {
+     222.25806991339002`, 15.}}]}, 
+   {Hue[0.631539260758991, 0.101608259110331, 0.898391740889669], 
+    PolygonBox[{{16.081246153669568`, 30.}, {24.54732211505342, 
+     38.37568672094855}, {12.802270507693208`, 40.}}]}, 
+   {Hue[0.610559329354, 0.03953025347921357, 0.9604697465207864], 
+    PolygonBox[{{240., 20.}, {230., 19.632063000216533`}, {240., 15.}}]}, 
+   {Hue[0.7249441001033488, 0.07656020480251113, 0.9234397951974889], 
+    PolygonBox[{{235., 141.53087209812537`}, {232.16076294052004`, 
+     141.30331113319824`}, {240., 135.}}]}, 
+   {Hue[0.7472658740728648, 0.044390771052568945`, 0.955609228947431], 
+    PolygonBox[{{19.04819673666431, 20.}, {25., 19.316524539176342`}, {
+     25.199906517780278`, 24.498714195378938`}}]}, 
+   {Hue[0.6972659823253476, 0.08353598415462815, 0.9164640158453718], 
+    PolygonBox[{{16.63533227214208, 29.763442486247783`}, {24.54732211505342, 
+     38.37568672094855}, {16.081246153669568`, 30.}}]}, 
+   {Hue[0.6711134567762034, 0.031563164578952585`, 0.9684368354210474], 
+    PolygonBox[{{35., 0.}, {41.672537649344406`, 5.}, {30., 
+     3.6574478021178365`}}]}, 
+   {Hue[0.704630003918614, 0.06274517520740697, 0.937254824792593], 
+    PolygonBox[{{21.792353585560463`, 140.}, {20., 138.72174531937299`}, {
+     25.38287581623473, 139.1801082793375}}]}, 
+   {Hue[0.779162715335445, 0.10173063246627534`, 0.8982693675337247], 
+    PolygonBox[{{15.076808754332802`, 131.21296046755214`}, {
+     35.58466136460311, 135.}, {25.38287581623473, 139.1801082793375}}]}, 
+   {Hue[0.765007504583384, 0.0477922829550429, 0.9522077170449571], 
+    PolygonBox[{{12.802270507693208`, 40.}, {27.304833340328585`, 45.}, {
+     9.979271139795614, 50.}}]}, 
+   {Hue[0.8253497139522717, 0.07659609417403657, 0.9234039058259634], 
+    PolygonBox[{{63.159761053521606`, 179.4989402649996}, {65., 
+     164.35795968375072`}, {65., 180.}}]}, 
+   {Hue[0.616026763393308, 0.060931998143135435`, 0.9390680018568646], 
+    PolygonBox[{{8.614076868715017, 53.37700287925887}, {32.45967504746217, 
+     60.}, {7.352625232678264, 65.27809626948005}}]}, 
+   {Hue[0.7250462837349021, 0.044898832848133785`, 0.9551011671518662], 
+    PolygonBox[{{20., 138.72174531937299`}, {15.076808754332802`, 
+     131.21296046755214`}, {25.38287581623473, 139.1801082793375}}]}, 
+   {Hue[0.8169415983669022, 0.044299328412350736`, 0.9557006715876493], 
+    PolygonBox[{{0., 60.}, {0., 55.}, {8.614076868715017, 
+     53.37700287925887}}]}, 
+   {Hue[0.6583071008705956, 0.10223711081022646`, 0.8977628891897735], 
+    PolygonBox[{{9.979271139795614, 50.}, {32.45967504746217, 60.}, {
+     8.614076868715017, 53.37700287925887}}]}, 
+   {Hue[0.6174025798609097, 0.10142667863124755`, 0.8985733213687525], 
+    PolygonBox[{{230., 158.37162266376419`}, {229.23956889395612`, 160.}, {
+     227.5192995293452, 155.}}]}, 
+   {Hue[0.7629375719574876, 0.024951193733667942`, 0.9750488062663321], 
+    PolygonBox[{{235., 141.53087209812537`}, {240., 135.}, {240., 140.}}]}, 
+   {Hue[0.7072369561375775, 0.04195818906449145, 0.9580418109355086], 
+    PolygonBox[{{55., 171.49546845278292`}, {65., 164.35795968375072`}, {
+     63.159761053521606`, 179.4989402649996}}]}, 
+   {Hue[0.6265289498461599, 0.10470574515671327`, 0.8952942548432867], 
+    PolygonBox[{{60., 180.}, {55., 171.49546845278292`}, {63.159761053521606`,
+      179.4989402649996}}]}, 
+   {Hue[0.7165022182677137, 0.07407486226933002, 0.92592513773067], 
+    PolygonBox[{{16.081246153669568`, 30.}, {12.802270507693208`, 40.}, {10., 
+     31.313140985735146`}}]}, 
+   {Hue[0.6575802823135413, 0.04117595302021193, 0.9588240469797881], 
+    PolygonBox[{{0., 50.}, {9.979271139795614, 50.}, {8.614076868715017, 
+     53.37700287925887}}]}, 
+   {Hue[0.6419860681852467, 0.07967217405507265, 0.9203278259449273], 
+    PolygonBox[{{20., 13.889572975568981`}, {25., 19.316524539176342`}, {
+     19.04819673666431, 20.}}]}, 
+   {Hue[0.6223104712481927, 0.06119831191322067, 0.9388016880867793], 
+    PolygonBox[{{195., 180.}, {202.65994731745195`, 175.}, {200., 180.}}]}, 
+   {Hue[0.7667753829132732, 0.036526095739588205`, 0.9634739042604118], 
+    PolygonBox[{{202.65994731745195`, 175.}, {204.28863337138478`, 170.}, {
+     210., 180.}}]}, 
+   {Hue[0.716398272096618, 0.10724418807677583`, 0.8927558119232242], 
+    PolygonBox[{{35., 162.51089592243733`}, {42.25073501532148, 160.}, {
+     44.08505135707999, 165.}}]}, 
+   {Hue[0.6097407976985828, 0.07357708676537666, 0.9264229132346233], 
+    PolygonBox[{{42.25073501532148, 160.}, {50., 152.4670002436089}, {
+     44.08505135707999, 165.}}]}, 
+   {Hue[0.612108208943703, 0.051892002584078556`, 0.9481079974159214], 
+    PolygonBox[{{27.302800922083307`, 150.}, {30., 144.97631355245784`}, {40.,
+      148.4834080146355}}]}, 
+   {Hue[0.634191521697343, 0.09534408596427191, 0.9046559140357281], 
+    PolygonBox[{{200., 180.}, {202.65994731745195`, 175.}, {203.3948043343559,
+      178.38360311905114`}}]}, 
+   {Hue[0.8080337882968076, 0.08061144672001153, 0.9193885532799885], 
+    PolygonBox[{{35., 0.}, {30., 3.6574478021178365`}, {30., 0.}}]}, 
+   {Hue[0.7410097178014614, 0.08662175606746747, 0.9133782439325325], 
+    PolygonBox[{{30., 3.6574478021178365`}, {25., 19.316524539176342`}, {20., 
+     13.889572975568981`}}]}, 
+   {Hue[0.7697925611189267, 0.1032386500973792, 0.8967613499026208], 
+    PolygonBox[{{240., 15.}, {230., 19.632063000216533`}, {240., 10.}}]}, 
+   {Hue[0.7645968098747876, 0.06564305365265266, 0.9343569463473473], 
+    PolygonBox[{{240., 145.}, {235., 141.53087209812537`}, {240., 140.}}]}, 
+   {Hue[0.6247154760030562, 0.07849769630249159, 0.9215023036975084], 
+    PolygonBox[{{55., 180.}, {55., 171.49546845278292`}, {60., 180.}}]}, 
+   {Hue[0.8150925432743087, 0.06923901708528224, 0.9307609829147178], 
+    PolygonBox[{{63.159761053521606`, 179.4989402649996}, {65., 180.}, {60., 
+     180.}}]}, 
+   {Hue[0.7812411345726049, 0.0719733155376503, 0.9280266844623497], 
+    PolygonBox[{{25., 0.}, {30., 3.6574478021178365`}, {20., 
+     13.889572975568981`}}]}, 
+   {Hue[0.7443415632081795, 0.09272697403668506, 0.9072730259633149], 
+    PolygonBox[{{11.471704690765009`, 25.}, {16.081246153669568`, 30.}, {10., 
+     31.313140985735146`}}]}, 
+   {Hue[0.7375578794841506, 0.057152439462133775`, 0.9428475605378662], 
+    PolygonBox[{{21.101192479584313`, 115.}, {6.342270948846689, 105.}, {
+     17.10976344787821, 95.}}]}, 
+   {Hue[0.6038212138791115, 0.06703584972933052, 0.9329641502706695], 
+    PolygonBox[{{25.38287581623473, 139.1801082793375}, {30., 
+     144.97631355245784`}, {21.792353585560463`, 140.}}]}, 
+   {Hue[0.7169321116894326, 0.10293893982040225`, 0.8970610601795977], 
+    PolygonBox[{{240., 10.}, {230., 0.}, {235., 0.}}]}, 
+   {Hue[0.7364743360938448, 0.02327839072323623, 0.9767216092767638], 
+    PolygonBox[{{200., 180.}, {203.3948043343559, 178.38360311905114`}, {205.,
+      180.}}]}, 
+   {Hue[0.826155330834744, 0.01151182048544308, 0.9884881795145569], 
+    PolygonBox[{{203.3948043343559, 178.38360311905114`}, {
+     202.65994731745195`, 175.}, {210., 180.}}]}, 
+   {Hue[0.7333909403186457, 0.061699588666279004`, 0.938300411333721], 
+    PolygonBox[{{230., 158.37162266376419`}, {227.5192995293452, 155.}, {
+     235.48197384252634`, 150.}}]}, 
+   {Hue[0.6979331549346162, 0.02765651929342272, 0.9723434807065773], 
+    PolygonBox[{{227.5192995293452, 155.}, {232.16076294052004`, 
+     141.30331113319824`}, {235.48197384252634`, 150.}}]}, 
+   {Hue[0.6128451664043837, 0.07618318996396511, 0.9238168100360349], 
+    PolygonBox[{{21.792353585560463`, 140.}, {30., 144.97631355245784`}, {
+     27.302800922083307`, 150.}}]}, 
+   {Hue[0.7555139696677508, 0.07835974976788451, 0.9216402502321155], 
+    PolygonBox[{{50., 180.}, {55., 171.49546845278292`}, {55., 180.}}]}, 
+   {Hue[0.6895994453767649, 0.07190766786095026, 0.9280923321390497], 
+    PolygonBox[{{6.342270948846689, 105.}, {0., 95.}, {17.10976344787821, 
+     95.}}]}, 
+   {Hue[0.6726143113179329, 0.056391367960897276`, 0.9436086320391027], 
+    PolygonBox[{{15., 145.45820146881232`}, {27.302800922083307`, 150.}, {25.,
+      152.35526392931234`}}]}, 
+   {Hue[0.6816018663245724, 0.10136512118193863`, 0.8986348788180614], 
+    PolygonBox[{{0., 90.}, {12.430609743823652`, 81.60644978484015}, {
+     17.10976344787821, 95.}}]}, 
+   {Hue[0.6345257943152709, 0.09984118514974605, 0.900158814850254], 
+    PolygonBox[{{229.23956889395612`, 160.}, {220., 156.28025923171248`}, {
+     227.5192995293452, 155.}}]}, 
+   {Hue[0.6778899626151459, 0.09458810257814065, 0.9054118974218593], 
+    PolygonBox[{{240., 10.}, {235., 0.}, {240., 5.}}]}, 
+   {Hue[0.6621768497538693, 0.03125561230156915, 0.9687443876984309], 
+    PolygonBox[{{240., 145.68150815814627`}, {235.48197384252634`, 150.}, {
+     235., 141.53087209812537`}}]}, 
+   {Hue[0.6523295528118537, 0.01286262654949466, 0.9871373734505053], 
+    PolygonBox[{{240., 145.68150815814627`}, {235., 141.53087209812537`}, {
+     240., 145.}}]}, 
+   {Hue[0.6601191736003915, 0.03160352795170218, 0.9683964720482978], 
+    PolygonBox[{{11.471704690765009`, 25.}, {19.04819673666431, 20.}, {
+     16.63533227214208, 29.763442486247783`}}]}, 
+   {Hue[0.7798201284562183, 0.0100435963801081, 0.9899564036198919], 
+    PolygonBox[{{0.9174695089635634, 65.87549060409106}, {7.352625232678264, 
+     65.27809626948005}, {1.704016628676392, 70.}}]}, 
+   {Hue[0.7219505943907564, 0.02316980044111061, 0.9768301995588894], 
+    PolygonBox[{{9.22757754523812, 130.}, {6.303764080002523, 125.}, {
+     15.076808754332802`, 131.21296046755214`}}]}, 
+   {Hue[0.7192434490416652, 0.059971553639290964`, 0.940028446360709], 
+    PolygonBox[{{25., 152.35526392931234`}, {27.302800922083307`, 150.}, {35.,
+      162.51089592243733`}}]}, 
+   {Hue[0.6332110428376079, 0.058118137672866554`, 0.9418818623271334], 
+    PolygonBox[{{240., 150.}, {235.48197384252634`, 150.}, {240., 
+     145.68150815814627`}}]}, 
+   {Hue[0.7962788918150275, 0.02130323260403033, 0.9786967673959697], 
+    PolygonBox[{{225., 174.21489302622632`}, {204.28863337138478`, 170.}, {
+     205., 164.75020912621073`}}]}, 
+   {Hue[0.7617889458699622, 0.09889902063749778, 0.9011009793625022], 
+    PolygonBox[{{240., 155.}, {235.48197384252634`, 150.}, {240., 150.}}]}, 
+   {Hue[0.8023062141049779, 0.07095442346736536, 0.9290455765326346], 
+    PolygonBox[{{0.9174695089635634, 65.87549060409106}, {0., 65.}, {0., 
+     60.}}]}, 
+   {Hue[0.7259435396002158, 0.09629856529158842, 0.9037014347084116], 
+    PolygonBox[{{7.352625232678264, 65.27809626948005}, {14.213005900640326`, 
+     80.58172872111663}, {1.704016628676392, 70.}}]}, 
+   {Hue[0.7794670140277556, 0.0864750041691833, 0.9135249958308167], 
+    PolygonBox[{{50., 180.}, {48.59929460865206, 180.}, {55., 
+     171.49546845278292`}}]}, 
+   {Hue[0.6466293381045328, 0.05216502554469071, 0.9478349744553093], 
+    PolygonBox[{{11.29109755712824, 15.}, {19.04819673666431, 20.}, {
+     11.471704690765009`, 25.}}]}, 
+   {Hue[0.6715345089681183, 0.083244502583667, 0.916755497416333], 
+    PolygonBox[{{11.29109755712824, 15.}, {20., 13.889572975568981`}, {
+     19.04819673666431, 20.}}]}, 
+   {Hue[0.7500752002293378, 0.06538871552026371, 0.9346112844797363], 
+    PolygonBox[{{30., 0.}, {30., 3.6574478021178365`}, {25., 0.}}]}, 
+   {Hue[0.6520728018824643, 0.040896592548209654`, 0.9591034074517903], 
+    PolygonBox[{{27.302800922083307`, 150.}, {15., 145.45820146881232`}, {
+     21.792353585560463`, 140.}}]}, 
+   {Hue[0.7836673531671845, 0.07461618763947253, 0.9253838123605275], 
+    PolygonBox[{{27.302800922083307`, 150.}, {42.11046086861592, 155.}, {35., 
+     162.51089592243733`}}]}, 
+   {Hue[0.6607624124313264, 0.05244736102473868, 0.9475526389752613], 
+    PolygonBox[{{0.9174695089635634, 65.87549060409106}, {0., 60.}, {
+     7.352625232678264, 65.27809626948005}}]}, 
+   {Hue[0.8180750086514815, 0.09826333280688693, 0.9017366671931131], 
+    PolygonBox[{{1.704016628676392, 70.}, {12.430609743823652`, 
+     81.60644978484015}, {0., 75.}}]}, 
+   {Hue[0.802131971372362, 0.027050161704460063`, 0.9729498382955399], 
+    PolygonBox[{{7.352625232678264, 65.27809626948005}, {0., 60.}, {
+     8.614076868715017, 53.37700287925887}}]}, 
+   {Hue[0.7160504094775357, 0.04503417705815216, 0.9549658229418478], 
+    PolygonBox[{{205., 180.}, {203.3948043343559, 178.38360311905114`}, {210.,
+      180.}}]}, 
+   {Hue[0.8200556382297718, 0.014613697770039735`, 0.9853863022299603], 
+    PolygonBox[{{0., 70.}, {1.704016628676392, 70.}, {0., 75.}}]}, 
+   {Hue[0.7911544666194898, 0.06059067441613308, 0.9394093255838669], 
+    PolygonBox[{{0.9174695089635634, 65.87549060409106}, {1.704016628676392, 
+     70.}, {0., 70.}}]}, 
+   {Hue[0.7098388845921543, 0.09764420612108882, 0.9023557938789112], 
+    PolygonBox[{{0., 75.}, {12.430609743823652`, 81.60644978484015}, {0., 
+     80.}}]}, 
+   {Hue[0.6533557195779309, 0.06948803911855805, 0.930511960881442], 
+    PolygonBox[{{15., 145.45820146881232`}, {20., 138.72174531937299`}, {
+     21.792353585560463`, 140.}}]}, 
+   {Hue[0.7536051669537933, 0.09807288407080372, 0.9019271159291963], 
+    PolygonBox[{{240., 5.}, {235., 0.}, {240., 0.}}]}, 
+   {Hue[0.7352379870600809, 0.043595656246059766`, 0.9564043437539402], 
+    PolygonBox[{{240., 155.}, {240., 160.}, {230., 158.37162266376419`}}]}, 
+   {Hue[0.7766474987131985, 0.07066807335571579, 0.9293319266442842], 
+    PolygonBox[{{240., 155.}, {230., 158.37162266376419`}, {
+     235.48197384252634`, 150.}}]}, 
+   {Hue[0.7674258024293376, 0.08258321110411415, 0.9174167888958858], 
+    PolygonBox[{{8.614076868715017, 53.37700287925887}, {0., 55.}, {0., 
+     50.}}]}, 
+   {Hue[0.6422865673972572, 0.026929621443347207`, 0.9730703785566528], 
+    PolygonBox[{{0.9174695089635634, 65.87549060409106}, {0., 70.}, {0., 
+     65.}}]}, 
+   {Hue[0.7005191294360488, 0.05297691543063976, 0.9470230845693602], 
+    PolygonBox[{{0., 80.}, {12.430609743823652`, 81.60644978484015}, {0., 
+     85.}}]}, 
+   {Hue[0.8347099325426097, 0.020118154734771743`, 0.9798818452652283], 
+    PolygonBox[{{9.979271139795614, 50.}, {0., 50.}, {0., 45.}}]}, 
+   {Hue[0.6026958505542749, 0.08650374733817379, 0.9134962526618262], 
+    PolygonBox[{{0., 85.}, {12.430609743823652`, 81.60644978484015}, {0., 
+     90.}}]}, 
+   {Hue[0.6718244111196191, 0.05119423191382344, 0.9488057680861766], 
+    PolygonBox[{{6.303764080002523, 125.}, {21.101192479584313`, 115.}, {
+     15.076808754332802`, 131.21296046755214`}}]}, 
+   {Hue[0.8089119655730578, 0.03628663525511455, 0.9637133647448854], 
+    PolygonBox[{{48.59929460865206, 180.}, {45., 180.}, {44.08505135707999, 
+     165.}}]}, 
+   {Hue[0.638996232889946, 0.09465427960869188, 0.9053457203913081], 
+    PolygonBox[{{48.59929460865206, 180.}, {44.08505135707999, 165.}, {55., 
+     171.49546845278292`}}]}, 
+   {Hue[0.8003715954748356, 0.016607698143693783`, 0.9833923018563062], 
+    PolygonBox[{{9.979271139795614, 50.}, {0., 45.}, {12.802270507693208`, 
+     40.}}]}, 
+   {Hue[0.8260155776777636, 0.08743152877878835, 0.9125684712212117], 
+    PolygonBox[{{0., 90.}, {17.10976344787821, 95.}, {0., 95.}}]}, 
+   {Hue[0.6516952679106123, 0.08020645774796531, 0.9197935422520347], 
+    PolygonBox[{{45., 180.}, {40., 180.}, {44.08505135707999, 165.}}]}, 
+   {Hue[0.8286708991680574, 0.04233685072163518, 0.9576631492783648], 
+    PolygonBox[{{2.4109586847077367`, 37.816513554029314`}, {10., 
+     31.313140985735146`}, {12.802270507693208`, 40.}}]}, 
+   {Hue[0.6049878501161987, 0.05507356245457107, 0.9449264375454289], 
+    PolygonBox[{{0., 95.}, {6.342270948846689, 105.}, {0., 100.}}]}, 
+   {Hue[0.7764623231528921, 0.038583450098989336`, 0.9614165499010107], 
+    PolygonBox[{{10., 143.6074974201582}, {20., 138.72174531937299`}, {15., 
+     145.45820146881232`}}]}, 
+   {Hue[0.658310999380709, 0.09404629920425167, 0.9059537007957483], 
+    PolygonBox[{{210., 180.}, {204.28863337138478`, 170.}, {215., 180.}}]}, 
+   {Hue[0.6294346248085905, 0.051365300821639814`, 0.9486346991783602], 
+    PolygonBox[{{6.303764080002523, 125.}, {0., 115.}, {21.101192479584313`, 
+     115.}}]}, 
+   {Hue[0.7276772045799559, 0.045443022314814785`, 0.9545569776851852], 
+    PolygonBox[{{15., 7.334241825927116}, {20., 13.889572975568981`}, {
+     11.29109755712824, 15.}}]}, 
+   {Hue[0.7960821061183437, 0.06727472448732452, 0.9327252755126755], 
+    PolygonBox[{{1.5736630385557362`, 35.}, {10., 31.313140985735146`}, {
+     2.4109586847077367`, 37.816513554029314`}}]}, 
+   {Hue[0.7059108169944321, 0.04482047833914349, 0.9551795216608565], 
+    PolygonBox[{{1.5736630385557362`, 35.}, {0., 30.}, {10., 
+     31.313140985735146`}}]}, 
+   {Hue[0.7522502715952767, 0.044277353363936345`, 0.9557226466360637], 
+    PolygonBox[{{25., 0.}, {20., 13.889572975568981`}, {20., 0.}}]}, 
+   {Hue[0.673204120114387, 0.042022494322786486`, 0.9579775056772135], 
+    PolygonBox[{{240., 160.}, {229.23956889395612`, 160.}, {230., 
+     158.37162266376419`}}]}, 
+   {Hue[0.6378687481406535, 0.05131734293997514, 0.9486826570600249], 
+    PolygonBox[{{20., 0.}, {20., 13.889572975568981`}, {15., 
+     7.334241825927116}}]}, 
+   {Hue[0.7986946836100325, 0.09469435651838465, 0.9053056434816154], 
+    PolygonBox[{{0., 115.}, {6.342270948846689, 105.}, {21.101192479584313`, 
+     115.}}]}, 
+   {Hue[0.7953094560962408, 0.10908615806431776`, 0.8909138419356822], 
+    PolygonBox[{{2.4109586847077367`, 37.816513554029314`}, {
+     12.802270507693208`, 40.}, {0., 45.}}]}, 
+   {Hue[0.7392468731996118, 0.03245881895027303, 0.967541181049727], 
+    PolygonBox[{{0., 100.}, {6.342270948846689, 105.}, {0., 105.}}]}, 
+   {Hue[0.8226139469924594, 0.09675552997513459, 0.9032444700248654], 
+    PolygonBox[{{0., 35.}, {0., 30.}, {1.5736630385557362`, 35.}}]}, 
+   {Hue[0.7109410713370816, 0.021129465487952026`, 0.978870534512048], 
+    PolygonBox[{{2.4109586847077367`, 37.816513554029314`}, {0., 45.}, {0., 
+     40.}}]}, 
+   {Hue[0.81530987973143, 0.06262672530789137, 0.9373732746921086], 
+    PolygonBox[{{0., 37.31401059657203}, {0., 35.}, {1.5736630385557362`, 
+     35.}}]}, 
+   {Hue[0.7365280586096455, 0.03149029666916903, 0.968509703330831], 
+    PolygonBox[{{40., 180.}, {33.22263359483908, 175.}, {44.08505135707999, 
+     165.}}]}, 
+   {Hue[0.7649290088660191, 0.03415036734688781, 0.9658496326531122], 
+    PolygonBox[{{0., 37.31401059657203}, {2.4109586847077367`, 
+     37.816513554029314`}, {0., 40.}}]}, 
+   {Hue[0.7441314697734585, 0.01655465885967744, 0.9834453411403226], 
+    PolygonBox[{{0., 105.}, {6.342270948846689, 105.}, {0., 110.}}]}, 
+   {Hue[0.77700090599604, 0.05155195355280262, 0.9484480464471974], 
+    PolygonBox[{{10., 143.6074974201582}, {5., 136.7043387611585}, {
+     15.076808754332802`, 131.21296046755214`}}]}, 
+   {Hue[0.7747037874939415, 0.06681135083697576, 0.9331886491630242], 
+    PolygonBox[{{10., 143.6074974201582}, {15.076808754332802`, 
+     131.21296046755214`}, {20., 138.72174531937299`}}]}, 
+   {Hue[0.7639098595592978, 0.05304131363074427, 0.9469586863692557], 
+    PolygonBox[{{25., 152.35526392931234`}, {35., 162.51089592243733`}, {
+     14.037619771210046`, 166.26879038811273`}}]}, 
+   {Hue[0.6842465126647201, 0.06760088585251978, 0.9323991141474802], 
+    PolygonBox[{{215., 180.}, {204.28863337138478`, 170.}, {225., 
+     174.21489302622632`}}]}, 
+   {Hue[0.7777156262611687, 0.10172734345334333`, 0.8982726565466567], 
+    PolygonBox[{{10., 31.313140985735146`}, {0., 30.}, {0., 25.}}]}, 
+   {Hue[0.7633241081795312, 0.10228476445297952`, 0.8977152355470205], 
+    PolygonBox[{{1.5736630385557362`, 35.}, {2.4109586847077367`, 
+     37.816513554029314`}, {0., 37.31401059657203}}]}, 
+   {Hue[0.8282783100749771, 0.0470406194513715, 0.9529593805486285], 
+    PolygonBox[{{215., 180.}, {225., 174.21489302622632`}, {220., 180.}}]}, 
+   {Hue[0.6245756595511247, 0.05443120493372855, 0.9455687950662715], 
+    PolygonBox[{{10., 31.313140985735146`}, {0., 25.}, {11.471704690765009`, 
+     25.}}]}, 
+   {Hue[0.7580072410515544, 0.05278883031727122, 0.9472111696827288], 
+    PolygonBox[{{0., 110.}, {6.342270948846689, 105.}, {0., 115.}}]}, 
+   {Hue[0.6466607671942486, 0.03148489178058067, 0.9685151082194193], 
+    PolygonBox[{{6.303764080002523, 125.}, {9.22757754523812, 130.}, {0., 
+     130.}}]}, 
+   {Hue[0.6267788709521127, 0.08672506654332868, 0.9132749334566713], 
+    PolygonBox[{{240., 165.}, {229.23956889395612`, 160.}, {240., 160.}}]}, 
+   {Hue[0.7539304227193369, 0.0677087995252661, 0.9322912004747339], 
+    PolygonBox[{{240., 165.}, {237.7478107895593, 170.3500969332456}, {
+     229.23956889395612`, 160.}}]}, 
+   {Hue[0.6071398087896878, 0.04920280224331941, 0.9507971977566806], 
+    PolygonBox[{{20., 0.}, {15., 7.334241825927116}, {15., 0.}}]}, 
+   {Hue[0.8106361667215549, 0.0501716683281368, 0.9498283316718632], 
+    PolygonBox[{{15., 7.334241825927116}, {11.29109755712824, 15.}, {5., 
+     10.713829955312768`}}]}, 
+   {Hue[0.823397856987426, 0.06686068793593691, 0.9331393120640631], 
+    PolygonBox[{{10., 143.6074974201582}, {15., 145.45820146881232`}, {
+     17.695558484855155`, 154.53341686523925`}}]}, 
+   {Hue[0.7858453508025749, 0.05002482354485116, 0.9499751764551488], 
+    PolygonBox[{{15., 145.45820146881232`}, {25., 152.35526392931234`}, {
+     17.695558484855155`, 154.53341686523925`}}]}, 
+   {Hue[0.6371451996897293, 0.029785552028991025`, 0.970214447971009], 
+    PolygonBox[{{0., 25.}, {0., 20.}, {11.471704690765009`, 25.}}]}, 
+   {Hue[0.6739552033914429, 0.04995704875993556, 0.9500429512400644], 
+    PolygonBox[{{0., 115.}, {6.303764080002523, 125.}, {0., 120.}}]}, 
+   {Hue[0.8306880966348512, 0.05044847994838708, 0.9495515200516129], 
+    PolygonBox[{{33.22263359483908, 175.}, {35., 162.51089592243733`}, {
+     44.08505135707999, 165.}}]}, 
+   {Hue[0.678063926795432, 0.05142502621313649, 0.9485749737868635], 
+    PolygonBox[{{5., 136.7043387611585}, {9.22757754523812, 130.}, {
+     15.076808754332802`, 131.21296046755214`}}]}, 
+   {Hue[0.6550490690548298, 0.06044595009729936, 0.9395540499027006], 
+    PolygonBox[{{14.037619771210046`, 166.26879038811273`}, {35., 
+     162.51089592243733`}, {33.22263359483908, 175.}}]}, 
+   {Hue[0.7676828319702693, 0.10270972062795314`, 0.8972902793720469], 
+    PolygonBox[{{220., 180.}, {225., 174.21489302622632`}, {225., 180.}}]}, 
+   {Hue[0.6669825234167983, 0.07205499869574361, 0.9279450013042564], 
+    PolygonBox[{{225., 180.}, {225., 174.21489302622632`}, {225.170097258433, 
+     180.}}]}, 
+   {Hue[0.7657333907358016, 0.10770490442753167`, 0.8922950955724683], 
+    PolygonBox[{{0., 20.}, {11.29109755712824, 15.}, {11.471704690765009`, 
+     25.}}]}, 
+   {Hue[0.7178486134385749, 0.03378240977109881, 0.9662175902289012], 
+    PolygonBox[{{0., 120.}, {6.303764080002523, 125.}, {0., 125.}}]}, 
+   {Hue[0.8424421633672693, 0.028931108947691797`, 0.9710688910523082], 
+    PolygonBox[{{0., 130.}, {9.22757754523812, 130.}, {5., 
+     136.7043387611585}}]}, 
+   {Hue[0.7364994351020753, 0.0844672164296878, 0.9155327835703122], 
+    PolygonBox[{{10., 143.6074974201582}, {17.695558484855155`, 
+     154.53341686523925`}, {0., 155.}}]}, 
+   {Hue[0.6882547270003466, 0.07474050864488868, 0.9252594913551113], 
+    PolygonBox[{{237.7478107895593, 170.3500969332456}, {225., 
+     174.21489302622632`}, {229.23956889395612`, 160.}}]}, 
+   {Hue[0.7597389502415584, 0.08263227854874611, 0.9173677214512539], 
+    PolygonBox[{{4.656376346581538, 10.}, {15., 7.334241825927116}, {5., 
+     10.713829955312768`}}]}, 
+   {Hue[0.6630563120339872, 0.0690344460829373, 0.9309655539170627], 
+    PolygonBox[{{10., 0.}, {15., 7.334241825927116}, {4.656376346581538, 
+     10.}}]}, 
+   {Hue[0.7576339287394831, 0.01198544295694104, 0.988014557043059], 
+    PolygonBox[{{0., 15.}, {11.29109755712824, 15.}, {0., 20.}}]}, 
+   {Hue[0.6623374884302319, 0.10168002318344038`, 0.8983199768165596], 
+    PolygonBox[{{0., 15.}, {5., 10.713829955312768`}, {11.29109755712824, 
+     15.}}]}, 
+   {Hue[0.6067378617553504, 0.07882141492272232, 0.9211785850772777], 
+    PolygonBox[{{0., 125.}, {6.303764080002523, 125.}, {0., 130.}}]}, 
+   {Hue[0.6190798147119497, 0.024276470717620513`, 0.9757235292823795], 
+    PolygonBox[{{5., 136.7043387611585}, {10., 143.6074974201582}, {
+     1.0326753023520325`, 145.}}]}, 
+   {Hue[0.728460118429531, 0.01354765897644905, 0.986452341023551], 
+    PolygonBox[{{230., 180.}, {225., 174.21489302622632`}, {237.7478107895593,
+      170.3500969332456}}]}, 
+   {Hue[0.7452118324652657, 0.05879931408547945, 0.9412006859145206], 
+    PolygonBox[{{30., 180.}, {25., 180.}, {33.22263359483908, 175.}}]}, 
+   {Hue[0.824700249837698, 0.10049776951828815`, 0.8995022304817119], 
+    PolygonBox[{{30., 180.}, {33.22263359483908, 175.}, {35., 180.}}]}, 
+   {Hue[0.6461744878242843, 0.03384838287485192, 0.9661516171251481], 
+    PolygonBox[{{33.22263359483908, 175.}, {40., 180.}, {35., 180.}}]}, 
+   {Hue[0.7306121735720519, 0.0724867539754187, 0.9275132460245813], 
+    PolygonBox[{{15., 0.}, {15., 7.334241825927116}, {10., 0.}}]}, 
+   {Hue[0.794925262948399, 0.06578683830406717, 0.9342131616959328], 
+    PolygonBox[{{225.170097258433, 180.}, {225., 174.21489302622632`}, {230., 
+     180.}}]}, 
+   {Hue[0.8085906329542976, 0.01384702605579935, 0.9861529739442007], 
+    PolygonBox[{{240., 175.}, {237.7478107895593, 170.3500969332456}, {240., 
+     170.}}]}, 
+   {Hue[0.8087490876642296, 0.050916667763063694`, 0.9490833322369363], 
+    PolygonBox[{{237.7478107895593, 170.3500969332456}, {240., 165.}, {240., 
+     170.}}]}, 
+   {Hue[0.7403977729498384, 0.0505675531426828, 0.9494324468573172], 
+    PolygonBox[{{0., 10.}, {4.656376346581538, 10.}, {5., 
+     10.713829955312768`}}]}, 
+   {Hue[0.7137201359844958, 0.10000069873039574`, 0.8999993012696043], 
+    PolygonBox[{{0., 10.}, {5., 10.713829955312768`}, {0., 15.}}]}, 
+   {Hue[0.7492098439639245, 0.02431894605821816, 0.9756810539417818], 
+    PolygonBox[{{0., 130.}, {5., 136.7043387611585}, {0., 135.}}]}, 
+   {Hue[0.6294732868015254, 0.10879309927089953`, 0.8912069007291005], 
+    PolygonBox[{{14.037619771210046`, 166.26879038811273`}, {
+     17.695558484855155`, 154.53341686523925`}, {25., 152.35526392931234`}}]}, 
+   {Hue[0.6705563946464264, 0.06784567211007575, 0.9321543278899243], 
+    PolygonBox[{{0., 5.}, {4.656376346581538, 10.}, {0., 10.}}]}, 
+   {Hue[0.7814243283888602, 0.048228302431363446`, 0.9517716975686366], 
+    PolygonBox[{{0., 135.}, {5., 136.7043387611585}, {0., 140.}}]}, 
+   {Hue[0.6303566721333026, 0.019483948381919802`, 0.9805160516180802], 
+    PolygonBox[{{10., 0.}, {4.656376346581538, 10.}, {5., 0.}}]}, 
+   {Hue[0.6316097065079024, 0.053770157465731105`, 0.9462298425342689], 
+    PolygonBox[{{230., 180.}, {237.7478107895593, 170.3500969332456}, {235., 
+     180.}}]}, 
+   {Hue[0.7630507423353223, 0.07671687901171853, 0.9232831209882815], 
+    PolygonBox[{{5., 0.}, {4.656376346581538, 10.}, {0., 5.}}]}, 
+   {Hue[0.691348885856585, 0.04079271917513372, 0.9592072808248663], 
+    PolygonBox[{{235., 180.}, {237.7478107895593, 170.3500969332456}, {240., 
+     175.}}]}, 
+   {Hue[0.7029851515446786, 0.03601191542656146, 0.9639880845734385], 
+    PolygonBox[{{0., 140.}, {5., 136.7043387611585}, {1.0326753023520325`, 
+     145.}}]}, 
+   {Hue[0.8063838944895073, 0.043073805623752404`, 0.9569261943762476], 
+    PolygonBox[{{0., 160.}, {17.695558484855155`, 154.53341686523925`}, {
+     14.037619771210046`, 166.26879038811273`}}]}, 
+   {Hue[0.6163045416833511, 0.04387303717154711, 0.9561269628284529], 
+    PolygonBox[{{4.628445342671611, 0.}, {5., 0.}, {0., 5.}}]}, 
+   {Hue[0.6240520648316732, 0.0692039351497219, 0.9307960648502781], 
+    PolygonBox[{{0., 140.}, {1.0326753023520325`, 145.}, {0., 145.}}]}, 
+   {Hue[0.6962156874809167, 0.03318304848600795, 0.966816951513992], 
+    PolygonBox[{{1.0326753023520325`, 145.}, {10., 143.6074974201582}, {0., 
+     150.}}]}, 
+   {Hue[0.7759253063272615, 0.1029677026454835, 0.8970322973545165], 
+    PolygonBox[{{14.037619771210046`, 166.26879038811273`}, {
+     33.22263359483908, 175.}, {25., 180.}}]}, 
+   {Hue[0.723784595584509, 0.09532927104371913, 0.9046707289562809], 
+    PolygonBox[{{235., 180.}, {240., 175.}, {240., 180.}}]}, 
+   {Hue[0.7129725328729786, 0.07061873257625173, 0.9293812674237483], 
+    PolygonBox[{{4.628445342671611, 0.}, {0., 5.}, {0., 0.}}]}, 
+   {Hue[0.6960480087342937, 0.03675435978935793, 0.9632456402106421], 
+    PolygonBox[{{0., 145.}, {1.0326753023520325`, 145.}, {0., 150.}}]}, 
+   {Hue[0.7453590860066981, 0.020009790682390505`, 0.9799902093176095], 
+    PolygonBox[{{14.037619771210046`, 166.26879038811273`}, {25., 180.}, {20.,
+      180.}}]}, 
+   {Hue[0.8317375964771441, 0.058010190164427766`, 0.9419898098355722], 
+    PolygonBox[{{15., 180.}, {14.037619771210046`, 166.26879038811273`}, {20.,
+      180.}}]}, 
+   {Hue[0.7554730487585914, 0.045620845441807334`, 0.9543791545581927], 
+    PolygonBox[{{0., 150.}, {10., 143.6074974201582}, {0., 155.}}]}, 
+   {Hue[0.7283887424765315, 0.07094842575014015, 0.9290515742498598], 
+    PolygonBox[{{0., 155.}, {17.695558484855155`, 154.53341686523925`}, {0., 
+     160.}}]}, 
+   {Hue[0.7620461128827347, 0.0915626688550959, 0.9084373311449041], 
+    PolygonBox[{{10., 180.}, {14.037619771210046`, 166.26879038811273`}, {15.,
+      180.}}]}, 
+   {Hue[0.6899313291931064, 0.08357829188579369, 0.9164217081142063], 
+    PolygonBox[{{0., 162.03968415914355`}, {14.037619771210046`, 
+     166.26879038811273`}, {5.704174942946892, 170.}}]}, 
+   {Hue[0.6355029348561746, 0.02862365141394585, 0.9713763485860542], 
+    PolygonBox[{{0., 160.}, {14.037619771210046`, 166.26879038811273`}, {0., 
+     162.03968415914355`}}]}, 
+   {Hue[0.8272718564788479, 0.03397271817378922, 0.9660272818262108], 
+    PolygonBox[{{0., 162.03968415914355`}, {5.704174942946892, 170.}, {0., 
+     165.}}]}, 
+   {Hue[0.7414026665532933, 0.026874647440167654`, 0.9731253525598323], 
+    PolygonBox[{{5.704174942946892, 170.}, {14.037619771210046`, 
+     166.26879038811273`}, {10., 180.}}]}, 
+   {Hue[0.6201734109915373, 0.10106176157969271`, 0.8989382384203073], 
+    PolygonBox[{{5., 180.}, {5.704174942946892, 170.}, {10., 180.}}]}, 
+   {Hue[0.6945109728234765, 0.01480893069736211, 0.9851910693026379], 
+    PolygonBox[{{0., 165.}, {5.704174942946892, 170.}, {0., 170.}}]}, 
+   {Hue[0.799798476006838, 0.02205560193675271, 0.9779443980632473], 
+    PolygonBox[{{0., 175.}, {5.704174942946892, 170.}, {5., 180.}}]}, 
+   {Hue[0.7049534506366678, 0.06209337440472806, 0.9379066255952719], 
+    PolygonBox[{{0., 170.}, {5.704174942946892, 170.}, {0., 175.}}]}, 
+   {Hue[0.690744936365637, 0.053187084670592966`, 0.946812915329407], 
+    PolygonBox[{{0., 175.}, {5., 180.}, {0., 180.}}]}},
+  ImageSize->{1053.5999999999995`, Automatic}]], "Output",
+ CellChangeTimes->{{3.820082072732258*^9, 3.82008210547313*^9}, 
+   3.8200821434459124`*^9, 3.8595791122898993`*^9},
+ CellLabel->"Out[20]=",ExpressionUUID->"8492c8df-c7f6-4067-9ad6-70e85a5ab545"]
+}, Open  ]]
+},
+WindowSize->{958.5, 1005.},
+WindowMargins->{{-5.25, Automatic}, {Automatic, 0}},
+TaggingRules->{
+ "WelcomeScreenSettings" -> {"FEStarting" -> False}, "TryRealOnly" -> False},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"12.3 for Microsoft Windows (64-bit) (July 9, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"b7c75f4c-5504-4e6b-a10c-46b35ba196d7"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 3615, 68, 250, "Input",ExpressionUUID->"211208da-b257-4ded-b407-b273481d1905"],
+Cell[CellGroupData[{
+Cell[4198, 92, 2745, 49, 83, "Input",ExpressionUUID->"6e004281-64dc-45aa-9499-88d0d7d757c5"],
+Cell[6946, 143, 843, 13, 40, "Output",ExpressionUUID->"2a234dc9-ffef-42da-b2aa-477ad3e5ba6d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7826, 161, 4408, 125, 321, "Input",ExpressionUUID->"84a93d64-ec2c-404f-83e0-cb0c7bfd3afe"],
+Cell[12237, 288, 6537, 122, 302, "Output",ExpressionUUID->"42313206-5ade-44b5-af9c-da0c64661e89"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18811, 415, 179, 3, 35, "Input",ExpressionUUID->"3fc142fd-c6bd-41cd-8595-dfddd5205b33"],
+Cell[18993, 420, 9864, 171, 362, "Output",ExpressionUUID->"28adea5d-9f62-4f3d-9959-cc4bc7069eea"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28894, 596, 589, 16, 35, "Input",ExpressionUUID->"6c76ee5a-5c9d-436a-af30-22a14acf9803"],
+Cell[29486, 614, 129144, 2038, 1020, "Output",ExpressionUUID->"8492c8df-c7f6-4067-9ad6-70e85a5ab545"]
+}, Open  ]]
+}
+]
+*)
+
