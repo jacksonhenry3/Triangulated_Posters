@@ -7,6 +7,8 @@ To generate new images you will need mathematica.
 
 The poster template is made using adobe indesign.
 
+If you are working to produce outreach posters and are having problems with my code please reach out.
+
 This work is licensed under a
 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
 
