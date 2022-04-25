@@ -1,7 +1,7 @@
 # Triangulated_Posters
  [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
  
- ![image](https://user-images.githubusercontent.com/1857496/164765670-5967eab0-b349-4221-b6bd-e3007bd6fbbb.png)
+![image](https://user-images.githubusercontent.com/1857496/165095522-c0a9874e-1ed9-4474-a5e7-371628f88d39.png)
 
 
  
@@ -18,7 +18,7 @@ If you are working to produce outreach posters and are having problems with my c
 Examples
 
 - [EdwardBouchet.pdf](https://github.com/jacksonhenry3/Triangulated_Posters/files/8542825/EdwardBouchet.pdf)
-- [EmmyNoether.pdf](https://github.com/jacksonhenry3/Triangulated_Posters/files/8542811/EmmyNoether.pdf)
+- [EmmyNoether.pdf](https://github.com/jacksonhenry3/Triangulated_Posters/files/8554773/EmmyNoether.pdf)
 - [HelenQuinn.pdf](https://github.com/jacksonhenry3/Triangulated_Posters/files/8542826/HelenQuinn.pdf)
 - [Henrietta Swan Leavitt.pdf](https://github.com/jacksonhenry3/Triangulated_Posters/files/8542828/Henrietta.Swan.Leavitt.pdf)
 - [JudithResnik.pdf](https://github.com/jacksonhenry3/Triangulated_Posters/files/8542830/JudithResnik.pdf)
